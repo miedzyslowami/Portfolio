@@ -1,0 +1,13 @@
+@import '../variables.scss';
+
+.footer{
+  background-color: blue;
+  width:100vw;
+  .copyrights{
+    background-color: grey;
+    display:block;
+    text-align: center;
+    margin:0 auto;
+    padding:20px 0;
+  }
+}
