@@ -565,92 +565,6 @@ module.exports = warning;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-if (process.env.NODE_ENV !== 'production') {
-  var invariant = __webpack_require__(2);
-  var warning = __webpack_require__(6);
-  var ReactPropTypesSecret = __webpack_require__(8);
-  var loggedTypeFailures = {};
-}
-
-/**
- * Assert that the values match with the type specs.
- * Error messages are memorized and will only be shown once.
- *
- * @param {object} typeSpecs Map of name to a ReactPropType
- * @param {object} values Runtime values that need to be type-checked
- * @param {string} location e.g. "prop", "context", "child context"
- * @param {string} componentName Name of the component for error messages.
- * @param {?Function} getStack Returns the component stack.
- * @private
- */
-function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-  if (process.env.NODE_ENV !== 'production') {
-    for (var typeSpecName in typeSpecs) {
-      if (typeSpecs.hasOwnProperty(typeSpecName)) {
-        var error;
-        // Prop type validation may throw. In case they do, we don't want to
-        // fail the render phase where it didn't fail before. So we log it.
-        // After these have been cleaned up, we'll let them throw.
-        try {
-          // This is intentionally an invariant that gets caught. It's the same
-          // behavior as without this statement except with a better message.
-          invariant(typeof typeSpecs[typeSpecName] === 'function', '%s: %s type `%s` is invalid; it must be a function, usually from ' + 'the `prop-types` package, but received `%s`.', componentName || 'React class', location, typeSpecName, typeof typeSpecs[typeSpecName]);
-          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
-        } catch (ex) {
-          error = ex;
-        }
-        warning(!error || error instanceof Error, '%s: type specification of %s `%s` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a %s. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).', componentName || 'React class', location, typeSpecName, typeof error);
-        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
-          // Only monitor this failure once because there tends to be a lot of the
-          // same error.
-          loggedTypeFailures[error.message] = true;
-
-          var stack = getStack ? getStack() : '';
-
-          warning(false, 'Failed %s type: %s%s', location, error.message, stack != null ? stack : '');
-        }
-      }
-    }
-  }
-}
-
-module.exports = checkPropTypes;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-
-module.exports = ReactPropTypesSecret;
-
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 function checkDCE() {
@@ -693,46 +607,7 @@ if (process.env.NODE_ENV === 'production') {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-
-
-var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
-
-/**
- * Simple, lightweight module assisting with the detection and context of
- * Worker. Helps avoid circular dependencies and allows code to reason about
- * whether or not they are in a Worker, even if they never include the main
- * `ReactWorker` dependency.
- */
-var ExecutionEnvironment = {
-
-  canUseDOM: canUseDOM,
-
-  canUseWorkers: typeof Worker !== 'undefined',
-
-  canUseEventListeners: canUseDOM && !!(window.addEventListener || window.attachEvent),
-
-  canUseViewport: canUseDOM && !!window.screen,
-
-  isInWorker: !canUseDOM // For now, this is true - might change in the future.
-
-};
-
-module.exports = ExecutionEnvironment;
-
-/***/ }),
-/* 11 */
+/* 8 */
 /***/ (function(module, exports) {
 
 /*
@@ -814,7 +689,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 12 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -1186,6 +1061,131 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+if (process.env.NODE_ENV !== 'production') {
+  var invariant = __webpack_require__(2);
+  var warning = __webpack_require__(6);
+  var ReactPropTypesSecret = __webpack_require__(11);
+  var loggedTypeFailures = {};
+}
+
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */
+function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+  if (process.env.NODE_ENV !== 'production') {
+    for (var typeSpecName in typeSpecs) {
+      if (typeSpecs.hasOwnProperty(typeSpecName)) {
+        var error;
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+        try {
+          // This is intentionally an invariant that gets caught. It's the same
+          // behavior as without this statement except with a better message.
+          invariant(typeof typeSpecs[typeSpecName] === 'function', '%s: %s type `%s` is invalid; it must be a function, usually from ' + 'the `prop-types` package, but received `%s`.', componentName || 'React class', location, typeSpecName, typeof typeSpecs[typeSpecName]);
+          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        } catch (ex) {
+          error = ex;
+        }
+        warning(!error || error instanceof Error, '%s: type specification of %s `%s` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a %s. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).', componentName || 'React class', location, typeSpecName, typeof error);
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+          // Only monitor this failure once because there tends to be a lot of the
+          // same error.
+          loggedTypeFailures[error.message] = true;
+
+          var stack = getStack ? getStack() : '';
+
+          warning(false, 'Failed %s type: %s%s', location, error.message, stack != null ? stack : '');
+        }
+      }
+    }
+  }
+}
+
+module.exports = checkPropTypes;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+
+
+
+var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+
+/**
+ * Simple, lightweight module assisting with the detection and context of
+ * Worker. Helps avoid circular dependencies and allows code to reason about
+ * whether or not they are in a Worker, even if they never include the main
+ * `ReactWorker` dependency.
+ */
+var ExecutionEnvironment = {
+
+  canUseDOM: canUseDOM,
+
+  canUseWorkers: typeof Worker !== 'undefined',
+
+  canUseEventListeners: canUseDOM && !!(window.addEventListener || window.attachEvent),
+
+  canUseViewport: canUseDOM && !!window.screen,
+
+  isInWorker: !canUseDOM // For now, this is true - might change in the future.
+
+};
+
+module.exports = ExecutionEnvironment;
+
+/***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1472,7 +1472,7 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(9);
+var _reactDom = __webpack_require__(7);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -1484,7 +1484,11 @@ var _header = __webpack_require__(39);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _main = __webpack_require__(42);
+var _logo = __webpack_require__(47);
+
+var _logo2 = _interopRequireDefault(_logo);
+
+var _main = __webpack_require__(45);
 
 var _main2 = _interopRequireDefault(_main);
 
@@ -1511,7 +1515,6 @@ var App = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 { className: _main2.default.root },
-                'Hello world',
                 _react2.default.createElement(_header2.default, null),
                 _react2.default.createElement(_footer2.default, null)
             );
@@ -1581,7 +1584,7 @@ var require$$0 = __webpack_require__(6);
 var emptyObject = __webpack_require__(5);
 var invariant = __webpack_require__(2);
 var emptyFunction = __webpack_require__(1);
-var checkPropTypes = __webpack_require__(7);
+var checkPropTypes = __webpack_require__(10);
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -3276,7 +3279,7 @@ module.exports = ReactEntry;
  LICENSE file in the root directory of this source tree.
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(3);__webpack_require__(2);var l=__webpack_require__(10),n=__webpack_require__(4),ba=__webpack_require__(13),ca=__webpack_require__(1),da=__webpack_require__(5),ea=__webpack_require__(14),fa=__webpack_require__(15),ha=__webpack_require__(16),ia=__webpack_require__(17);
+var aa=__webpack_require__(3);__webpack_require__(2);var l=__webpack_require__(12),n=__webpack_require__(4),ba=__webpack_require__(13),ca=__webpack_require__(1),da=__webpack_require__(5),ea=__webpack_require__(14),fa=__webpack_require__(15),ha=__webpack_require__(16),ia=__webpack_require__(17);
 function w(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:w("227");
 function ja(a){switch(a){case "svg":return"http://www.w3.org/2000/svg";case "math":return"http://www.w3.org/1998/Math/MathML";default:return"http://www.w3.org/1999/xhtml"}}
 var ka={Namespaces:{html:"http://www.w3.org/1999/xhtml",mathml:"http://www.w3.org/1998/Math/MathML",svg:"http://www.w3.org/2000/svg"},getIntrinsicNamespace:ja,getChildNamespace:function(a,b){return null==a||"http://www.w3.org/1999/xhtml"===a?ja(b):"http://www.w3.org/2000/svg"===a&&"foreignObject"===b?"http://www.w3.org/1999/xhtml":a}},la=null,oa={};
@@ -3603,7 +3606,7 @@ if (process.env.NODE_ENV !== "production") {
 
 var react = __webpack_require__(3);
 var invariant = __webpack_require__(2);
-var ExecutionEnvironment = __webpack_require__(10);
+var ExecutionEnvironment = __webpack_require__(12);
 var _assign = __webpack_require__(4);
 var EventListener = __webpack_require__(13);
 var require$$0 = __webpack_require__(6);
@@ -3613,7 +3616,7 @@ var camelizeStyleName = __webpack_require__(28);
 var performanceNow = __webpack_require__(30);
 var propTypes = __webpack_require__(32);
 var emptyObject = __webpack_require__(5);
-var checkPropTypes = __webpack_require__(7);
+var checkPropTypes = __webpack_require__(10);
 var shallowEqual = __webpack_require__(14);
 var containsNode = __webpack_require__(15);
 var focusNode = __webpack_require__(16);
@@ -21018,7 +21021,7 @@ module.exports = performanceNow;
 
 
 
-var ExecutionEnvironment = __webpack_require__(10);
+var ExecutionEnvironment = __webpack_require__(12);
 
 var performance;
 
@@ -21082,8 +21085,8 @@ var invariant = __webpack_require__(2);
 var warning = __webpack_require__(6);
 var assign = __webpack_require__(4);
 
-var ReactPropTypesSecret = __webpack_require__(8);
-var checkPropTypes = __webpack_require__(7);
+var ReactPropTypesSecret = __webpack_require__(11);
+var checkPropTypes = __webpack_require__(10);
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -21629,7 +21632,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 var emptyFunction = __webpack_require__(1);
 var invariant = __webpack_require__(2);
-var ReactPropTypesSecret = __webpack_require__(8);
+var ReactPropTypesSecret = __webpack_require__(11);
 
 module.exports = function() {
   function shim(props, propName, componentName, location, propFullName, secret) {
@@ -21696,7 +21699,7 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(9);
+var _reactDom = __webpack_require__(7);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -21756,7 +21759,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(12)(content, options);
+var update = __webpack_require__(9)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -21776,17 +21779,18 @@ if(false) {
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(11)(undefined);
+exports = module.exports = __webpack_require__(8)(undefined);
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 
 // module
-exports.push([module.i, ".footer---1-SLt {\n  background-color: blue;\n  width: 100vw; }\n  .footer---1-SLt .copyrights---24Acq {\n    background-color: grey;\n    display: block;\n    text-align: center;\n    margin: 0 auto;\n    padding: 20px 0; }\n", ""]);
+exports.push([module.i, ".footer---1-SLt {\n  background-color: white;\n  width: 100vw;\n  font-size: 20px; }\n  .footer---1-SLt .copyrights---24Acq {\n    display: block;\n    text-align: center;\n    margin: 0 auto;\n    padding: 20px 0;\n    letter-spacing: 3px; }\n  .footer---1-SLt .credits---xPuh5 {\n    display: block;\n    text-align: center;\n    margin: 0 auto;\n    padding: 20px 0;\n    font-size: 10px; }\n    .footer---1-SLt .credits---xPuh5 a {\n      text-decoration: none;\n      color: black;\n      text-align: center; }\n", ""]);
 
 // exports
 exports.locals = {
 	"footer": "footer---1-SLt",
-	"copyrights": "copyrights---24Acq"
+	"copyrights": "copyrights---24Acq",
+	"credits": "credits---xPuh5"
 };
 
 /***/ }),
@@ -21902,9 +21906,17 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(9);
+var _reactDom = __webpack_require__(7);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _mobileMenu = __webpack_require__(42);
+
+var _mobileMenu2 = _interopRequireDefault(_mobileMenu);
+
+var _logo = __webpack_require__(47);
+
+var _logo2 = _interopRequireDefault(_logo);
 
 var _header = __webpack_require__(40);
 
@@ -21921,19 +21933,51 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Header = exports.Header = function (_React$Component) {
     _inherits(Header, _React$Component);
 
-    function Header() {
+    function Header(props) {
         _classCallCheck(this, Header);
 
-        return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, props));
+
+        _this.dropDownMenu = function () {
+            _this.state.showMenu === false ? _this.setState({ className: _header2.default.show__menu, showMenu: true }) : _this.setState({ className: '', showMenu: false });
+        };
+
+        _this.state = {
+            menuItems: ['About', 'Technologies', 'Works', 'Contact'],
+            className: '',
+            showMenu: false
+        };
+        return _this;
     }
 
     _createClass(Header, [{
         key: 'render',
         value: function render() {
+            var menuItems = this.state.menuItems.map(function (item, i) {
+                return _react2.default.createElement(
+                    'li',
+                    { key: i },
+                    item
+                );
+            });
             return _react2.default.createElement(
                 'div',
                 { className: _header2.default.header },
-                'Header'
+                _react2.default.createElement(
+                    'div',
+                    { className: _header2.default.wrapper },
+                    _react2.default.createElement(_logo2.default, null),
+                    _react2.default.createElement(
+                        'nav',
+                        { id: _header2.default.mobile__menu },
+                        _react2.default.createElement(_mobileMenu2.default, { handleClick: this.dropDownMenu }),
+                        _react2.default.createElement(
+                            'ul',
+                            { id: _header2.default.navigation, className: this.state.className },
+                            menuItems
+                        )
+                    )
+                )
             );
         }
     }]);
@@ -21958,7 +22002,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(12)(content, options);
+var update = __webpack_require__(9)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -21978,26 +22022,120 @@ if(false) {
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(11)(undefined);
+exports = module.exports = __webpack_require__(8)(undefined);
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 
 // module
-exports.push([module.i, ".header---1HG90 {\n  background-color: green; }\n", ""]);
+exports.push([module.i, ".header---1HG90 {\n  background-color: white;\n  font-size: 20px;\n  width: 100vw;\n  padding: 20px 10px;\n  box-sizing: border-box; }\n  .header---1HG90 .wrapper---a3p_u {\n    width: 100%;\n    max-width: 1200px;\n    margin: 0 auto; }\n    .header---1HG90 .wrapper---a3p_u #logo---3xMpx {\n      display: block;\n      width: 100%;\n      text-align: center; }\n    .header---1HG90 .wrapper---a3p_u #mobile__menu---1nfS1 {\n      display: block;\n      width: 100%; }\n    .header---1HG90 .wrapper---a3p_u #navigation---2oLrY {\n      height: 0;\n      visibility: hidden;\n      opacity: 0;\n      -webkit-transform: translateY(-2em);\n              transform: translateY(-2em);\n      z-index: -1;\n      transition: all 0.3s ease-in-out 0s,height 0.5s linear 0.1s,visibility 0s linear 0.3s, z-index 0s linear 0.01s; }\n      .header---1HG90 .wrapper---a3p_u #navigation---2oLrY li {\n        text-align: center;\n        padding: 30px;\n        text-transform: lowercase;\n        letter-spacing: 3px; }\n        .header---1HG90 .wrapper---a3p_u #navigation---2oLrY li:after {\n          display: block;\n          content: '';\n          border-bottom: solid 3px black;\n          -webkit-transform: scaleX(0);\n                  transform: scaleX(0);\n          transition: -webkit-transform 250ms ease-in-out;\n          transition: transform 250ms ease-in-out;\n          transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;\n          -webkit-transform-origin: 0% 50%;\n                  transform-origin: 0% 50%; }\n        .header---1HG90 .wrapper---a3p_u #navigation---2oLrY li:hover:after {\n          -webkit-transform: scaleX(1);\n                  transform: scaleX(1); }\n      .header---1HG90 .wrapper---a3p_u #navigation---2oLrY.show__menu---3BAXo {\n        height: 350px;\n        visibility: visible;\n        /* shows sub-menu */\n        opacity: 1;\n        z-index: 1;\n        -webkit-transform: translateY(0%);\n                transform: translateY(0%);\n        transition-delay: 0s,0s, 0s, 0.3s,0.01s; }\n", ""]);
 
 // exports
 exports.locals = {
-	"header": "header---1HG90"
+	"header": "header---1HG90",
+	"wrapper": "wrapper---a3p_u",
+	"logo": "logo---3xMpx",
+	"mobile__menu": "mobile__menu---1nfS1",
+	"navigation": "navigation---2oLrY",
+	"show__menu": "show__menu---3BAXo"
 };
 
 /***/ }),
 /* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.MobileMenu = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(7);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _mobileMenu = __webpack_require__(43);
+
+var _mobileMenu2 = _interopRequireDefault(_mobileMenu);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MobileMenu = exports.MobileMenu = function (_React$Component) {
+    _inherits(MobileMenu, _React$Component);
+
+    function MobileMenu(props) {
+        _classCallCheck(this, MobileMenu);
+
+        var _this = _possibleConstructorReturn(this, (MobileMenu.__proto__ || Object.getPrototypeOf(MobileMenu)).call(this, props));
+
+        _this.handleClick = function (e) {
+            _this.state.rotate === false ? _this.setState({ className: _mobileMenu2.default.rotate__icon, rotate: true }) : _this.setState({ className: _mobileMenu2.default.unrotate__icon, rotate: false });
+            _this.props.handleClick();
+        };
+
+        _this.state = {
+            className: _mobileMenu2.default.unrotate__icon,
+            rotate: false
+        };
+        return _this;
+    }
+
+    _createClass(MobileMenu, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { id: _mobileMenu2.default.menu__icon, className: this.state.className, onClick: this.handleClick },
+                _react2.default.createElement(
+                    'svg',
+                    { id: _mobileMenu2.default.flower, xmlns: 'http://www.w3.org/2000/svg', x: '0px', y: '0px', viewBox: '0 0 488.979 488.979', role: 'img', 'aria-labelledby': 'title desc' },
+                    _react2.default.createElement(
+                        'title',
+                        { id: 'title' },
+                        'Menu icon'
+                    ),
+                    _react2.default.createElement(
+                        'desc',
+                        { id: 'desc' },
+                        'Flower'
+                    ),
+                    _react2.default.createElement('path', { id: _mobileMenu2.default.flower__petal__1, d: 'M312.187,66.206C303.422,30.711,282.542,0,245.98,0c-36.569,0-58.866,29.183-58.866,65.744   c0,36.57,55.378,78.545,58.866,154.829C302.951,188.373,323.864,113.45,312.187,66.206z' }),
+                    _react2.default.createElement('path', { id: _mobileMenu2.default.flower__petal__2, d: 'M176.812,422.772c8.764,35.496,29.645,66.207,66.215,66.207c36.56,0,58.857-29.184,58.857-65.746   c0-36.569-55.372-78.543-58.857-154.827C186.046,300.606,165.143,375.529,176.812,422.772z' }),
+                    _react2.default.createElement('path', { id: _mobileMenu2.default.flower__petal__3, d: 'M61.022,204.811c31.666,18.285,95.69-8.685,163.505,26.437c0.597-65.442-53.835-121.005-100.578-134.522   c-35.121-10.158-72.153-7.435-90.446,24.231C15.226,152.631,29.339,186.526,61.022,204.811z' }),
+                    _react2.default.createElement('path', { id: _mobileMenu2.default.flower__petal__4, d: 'M427.977,284.168c-31.658-18.293-95.707,8.685-163.505-26.453c-0.613,65.451,53.843,121.02,100.586,134.53   c35.121,10.148,72.145,7.434,90.446-24.241C473.781,336.34,459.643,302.445,427.977,284.168z' }),
+                    _react2.default.createElement('path', { id: _mobileMenu2.default.flower__petal__5, d: 'M223.046,255.161c-56.375-33.243-131.719-13.875-166.777,19.845c-26.389,25.338-42.532,58.77-24.255,90.437   c18.277,31.674,54.712,36.394,86.393,18.094C150.074,365.26,158.719,296.338,223.046,255.161z' }),
+                    _react2.default.createElement('path', { id: _mobileMenu2.default.flower__petal__6, d: 'M265.944,233.802c56.367,33.258,131.72,13.883,166.785-19.853c26.356-25.338,42.516-58.764,24.239-90.445   c-18.293-31.65-54.71-36.363-86.376-18.086C338.933,123.695,330.263,192.656,265.944,233.802z' })
+                )
+            );
+        }
+    }]);
+
+    return MobileMenu;
+}(_react2.default.Component);
+
+exports.default = MobileMenu;
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(43);
+var content = __webpack_require__(44);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -22005,7 +22143,63 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(12)(content, options);
+var update = __webpack_require__(9)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!../../node_modules/postcss-loader/lib/index.js!../../node_modules/sass-loader/lib/loader.js?modules&localIdentName=[local]---[hash:base64:5]!./mobileMenu.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!../../node_modules/postcss-loader/lib/index.js!../../node_modules/sass-loader/lib/loader.js?modules&localIdentName=[local]---[hash:base64:5]!./mobileMenu.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(8)(undefined);
+// imports
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
+
+// module
+exports.push([module.i, "#menu__icon---3sbc4 {\n  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);\n  -webkit-transform: rotate(0deg);\n          transform: rotate(0deg);\n  display: block;\n  width: 50px;\n  height: 50px;\n  margin: 0 auto;\n  padding: 30px 0px; }\n  #menu__icon---3sbc4 #flower---21VEo #flower__petal__1---38ZRe {\n    fill: pink; }\n  #menu__icon---3sbc4 #flower---21VEo #flower__petal__2---2LEnh {\n    fill: pink; }\n  #menu__icon---3sbc4 #flower---21VEo #flower__petal__3---3gHUe {\n    fill: pink; }\n  #menu__icon---3sbc4 #flower---21VEo #flower__petal__4---3I4mt {\n    fill: pink; }\n  #menu__icon---3sbc4 #flower---21VEo #flower__petal__5---9nISM {\n    fill: pink; }\n  #menu__icon---3sbc4 #flower---21VEo #flower__petal__6---2vuKW {\n    fill: pink; }\n  #menu__icon---3sbc4.unrotate__icon---1aGYV {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  #menu__icon---3sbc4.rotate__icon---1x8DS {\n    -webkit-transform: rotate(540deg);\n            transform: rotate(540deg); }\n", ""]);
+
+// exports
+exports.locals = {
+	"menu__icon": "menu__icon---3sbc4",
+	"flower": "flower---21VEo",
+	"flower__petal__1": "flower__petal__1---38ZRe",
+	"flower__petal__2": "flower__petal__2---2LEnh",
+	"flower__petal__3": "flower__petal__3---3gHUe",
+	"flower__petal__4": "flower__petal__4---3I4mt",
+	"flower__petal__5": "flower__petal__5---9nISM",
+	"flower__petal__6": "flower__petal__6---2vuKW",
+	"unrotate__icon": "unrotate__icon---1aGYV",
+	"rotate__icon": "rotate__icon---1x8DS"
+};
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(46);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(9)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -22022,15 +22216,119 @@ if(false) {
 }
 
 /***/ }),
-/* 43 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(11)(undefined);
+exports = module.exports = __webpack_require__(8)(undefined);
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 
 // module
-exports.push([module.i, "*, body {\n  margin: 0;\n  padding: 0;\n  border: none; }\n\nbody {\n  background-color: pink;\n  font-weight: bold;\n  font-family: 'Raleway', sans-serif;\n  font-size: 30px; }\n", ""]);
+exports.push([module.i, "*, body {\n  margin: 0;\n  padding: 0;\n  border: none; }\n\nbody {\n  background-color: white;\n  font-weight: bold;\n  font-family: 'Raleway', sans-serif;\n  font-size: 30px; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Logo = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(7);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _logo = __webpack_require__(48);
+
+var _logo2 = _interopRequireDefault(_logo);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Logo = exports.Logo = function (_React$Component) {
+    _inherits(Logo, _React$Component);
+
+    function Logo() {
+        _classCallCheck(this, Logo);
+
+        return _possibleConstructorReturn(this, (Logo.__proto__ || Object.getPrototypeOf(Logo)).apply(this, arguments));
+    }
+
+    _createClass(Logo, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { id: _logo2.default.logo },
+                'Logo'
+            );
+        }
+    }]);
+
+    return Logo;
+}(_react2.default.Component);
+
+exports.default = Logo;
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(49);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(9)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!../../node_modules/postcss-loader/lib/index.js!../../node_modules/sass-loader/lib/loader.js?modules&localIdentName=[local]---[hash:base64:5]!./logo.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!../../node_modules/postcss-loader/lib/index.js!../../node_modules/sass-loader/lib/loader.js?modules&localIdentName=[local]---[hash:base64:5]!./logo.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(8)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
 
 // exports
 

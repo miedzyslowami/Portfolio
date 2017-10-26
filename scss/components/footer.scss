@@ -1,13 +1,29 @@
 @import '../variables.scss';
 
-.footer{
-  background-color: blue;
-  width:100vw;
-  .copyrights{
-    background-color: grey;
-    display:block;
+.footer {
+  background-color: $footerBackground;
+  width: 100vw;
+  font-size: $footerFontSize;
+
+  .copyrights {
+    display: block;
     text-align: center;
-    margin:0 auto;
-    padding:20px 0;
+    margin: 0 auto;
+    padding: 20px 0;
+    letter-spacing: 3px;
+  }
+
+  .credits {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px 0;
+    font-size: $footerFontSize * 0.5;
+
+    a {
+      text-decoration: none;
+      color: $footerFontColor;
+      text-align: center;
+    }
   }
 }
