@@ -7,7 +7,11 @@ $headerFontSize:20px;
 $menuIconSize:100px;
 $menuIconFill:pink;
 $showMenuTimer:1s;
-
+$headerPaddingTopBottom:20px;
+$menuItemPadding:20px;
+//there are 4 menu items---check the Header component state!
+$numberOfMenuItems:4;
+$menuHeight:(2 * $headerPaddingTopBottom) + $numberOfMenuItems * ($headerFontSize + 2 * $menuItemPadding);
 //Footer
 $footerBackground:white;
 $footerFontSize:20px;

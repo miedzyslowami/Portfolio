@@ -4,7 +4,7 @@
   background-color: $headerBackground;
   font-size:$headerFontSize;
   width:100vw;
-  padding: 20px 10px;
+  padding:$headerPaddingTopBottom 10px;
   box-sizing: border-box;
   .wrapper{
     width:100%;
@@ -28,7 +28,7 @@
       transition: all 0.3s ease-in-out 0s,height 0.5s linear 0.1s,visibility 0s linear 0.3s, z-index 0s linear 0.01s;
       li{
         text-align: center;
-        padding: 30px;
+        padding: $menuItemPadding;
         text-transform: lowercase;
         letter-spacing: 3px;
         //The border and transition are set on a pseudo element to prevent transitioning the text and avoid adding markup.
@@ -45,7 +45,7 @@
         }
       }
       &.show__menu{
-        height:350px;
+        height:$menuHeight;
         visibility: visible; /* shows sub-menu */
         opacity: 1;
         z-index: 1;
