@@ -1,3 +1,51 @@
+@import '../variables.scss';
+
+._#{$logoTextString}_{
+  content:'';//has to have property to be read by jsx module
+}
+
+
 #logo{
+  display:block;
+  margin:auto;
+  height:$logoHeight;
+  width:$logoWidth;
+  .text {
+    color: $logoColor;
+    font-size: $logoFontSize;
+    font-weight: 900;
+    display: inline-block;
+    animation: text $textDuration ease-in 3;
+    transform: translatez(0);
+    margin-top:$logoFontSize;
+
+    @for $i from 1 through $logoLength{
+      &__#{$i}{
+        width:$logoLetterBoxWidth;
+        text-align: center;
+        left: ($i - 1) * 4rem;
+        animation-delay: 150 + ($i - 1) * 80ms;
+        &:after{
+          display:none;
+          content:nth($logoText,$i);
+        }
+      }
+    }
+  }
+
+  @keyframes text {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    30% {
+      transform: translate3d(0, 0, 0);
+    }
+    45% {
+      transform: translate3d(0, -2rem, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
 
 }

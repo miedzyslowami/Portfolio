@@ -515,88 +515,6 @@ if (process.env.NODE_ENV === 'production') {
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -968,7 +886,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -992,7 +910,7 @@ module.exports = emptyObject;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1061,6 +979,88 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1076,7 +1076,7 @@ module.exports = warning;
 
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(3);
-  var warning = __webpack_require__(9);
+  var warning = __webpack_require__(8);
   var ReactPropTypesSecret = __webpack_require__(11);
   var loggedTypeFailures = {};
 }
@@ -1480,6 +1480,8 @@ var _logo2 = _interopRequireDefault(_logo);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -1489,19 +1491,38 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Logo = exports.Logo = function (_React$Component) {
     _inherits(Logo, _React$Component);
 
-    function Logo() {
+    function Logo(props) {
         _classCallCheck(this, Logo);
 
-        return _possibleConstructorReturn(this, (Logo.__proto__ || Object.getPrototypeOf(Logo)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Logo.__proto__ || Object.getPrototypeOf(Logo)).call(this, props));
+
+        _this.state = {
+            text: []
+        };
+        return _this;
     }
 
     _createClass(Logo, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            //logo text is extracted from scss file//
+            var textFromCss = Object.getOwnPropertyNames(_logo2.default)[0].substring(1, Object.getOwnPropertyNames(_logo2.default)[0].length - 1);
+            this.setState({ text: [].concat(_toConsumableArray(textFromCss)) });
+        }
+    }, {
         key: 'render',
         value: function render() {
+            var text = this.state.text.map(function (letter, i) {
+                return _react2.default.createElement(
+                    'div',
+                    { key: i, className: _logo2.default.text + ' ' + _logo2.default['text__' + (i + 1)] },
+                    letter
+                );
+            });
             return _react2.default.createElement(
                 'div',
                 { id: _logo2.default.logo },
-                'Logo'
+                text
             );
         }
     }]);
@@ -1601,7 +1622,7 @@ document.addEventListener('DOMContentLoaded', function () {
  This source code is licensed under the MIT license found in the
  LICENSE file in the root directory of this source tree.
 */
-var f=__webpack_require__(4),p=__webpack_require__(8);__webpack_require__(3);var r=__webpack_require__(1);
+var f=__webpack_require__(4),p=__webpack_require__(7);__webpack_require__(3);var r=__webpack_require__(1);
 function t(a){for(var b=arguments.length-1,d="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,e=0;e<b;e++)d+="\x26args[]\x3d"+encodeURIComponent(arguments[e+1]);b=Error(d+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var u={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function v(a,b,d){this.props=a;this.context=b;this.refs=p;this.updater=d||u}v.prototype.isReactComponent={};v.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?t("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};v.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function w(a,b,d){this.props=a;this.context=b;this.refs=p;this.updater=d||u}function x(){}x.prototype=v.prototype;var y=w.prototype=new x;y.constructor=w;f(y,v.prototype);y.isPureReactComponent=!0;function z(a,b,d){this.props=a;this.context=b;this.refs=p;this.updater=d||u}var A=z.prototype=new x;A.constructor=z;f(A,v.prototype);A.unstable_isAsyncReactComponent=!0;A.render=function(){return this.props.children};
@@ -1639,8 +1660,8 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 var objectAssign$1 = __webpack_require__(4);
-var require$$0 = __webpack_require__(9);
-var emptyObject = __webpack_require__(8);
+var require$$0 = __webpack_require__(8);
+var emptyObject = __webpack_require__(7);
 var invariant = __webpack_require__(3);
 var emptyFunction = __webpack_require__(1);
 var checkPropTypes = __webpack_require__(10);
@@ -3338,7 +3359,7 @@ module.exports = ReactEntry;
  LICENSE file in the root directory of this source tree.
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(2);__webpack_require__(3);var l=__webpack_require__(12),n=__webpack_require__(4),ba=__webpack_require__(13),ca=__webpack_require__(1),da=__webpack_require__(8),ea=__webpack_require__(14),fa=__webpack_require__(15),ha=__webpack_require__(16),ia=__webpack_require__(17);
+var aa=__webpack_require__(2);__webpack_require__(3);var l=__webpack_require__(12),n=__webpack_require__(4),ba=__webpack_require__(13),ca=__webpack_require__(1),da=__webpack_require__(7),ea=__webpack_require__(14),fa=__webpack_require__(15),ha=__webpack_require__(16),ia=__webpack_require__(17);
 function w(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:w("227");
 function ja(a){switch(a){case "svg":return"http://www.w3.org/2000/svg";case "math":return"http://www.w3.org/1998/Math/MathML";default:return"http://www.w3.org/1999/xhtml"}}
 var ka={Namespaces:{html:"http://www.w3.org/1999/xhtml",mathml:"http://www.w3.org/1998/Math/MathML",svg:"http://www.w3.org/2000/svg"},getIntrinsicNamespace:ja,getChildNamespace:function(a,b){return null==a||"http://www.w3.org/1999/xhtml"===a?ja(b):"http://www.w3.org/2000/svg"===a&&"foreignObject"===b?"http://www.w3.org/1999/xhtml":a}},la=null,oa={};
@@ -3668,13 +3689,13 @@ var invariant = __webpack_require__(3);
 var ExecutionEnvironment = __webpack_require__(12);
 var _assign = __webpack_require__(4);
 var EventListener = __webpack_require__(13);
-var require$$0 = __webpack_require__(9);
+var require$$0 = __webpack_require__(8);
 var hyphenateStyleName = __webpack_require__(27);
 var emptyFunction = __webpack_require__(1);
 var camelizeStyleName = __webpack_require__(29);
 var performanceNow = __webpack_require__(31);
 var propTypes = __webpack_require__(33);
-var emptyObject = __webpack_require__(8);
+var emptyObject = __webpack_require__(7);
 var checkPropTypes = __webpack_require__(10);
 var shallowEqual = __webpack_require__(14);
 var containsNode = __webpack_require__(15);
@@ -21141,7 +21162,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 var emptyFunction = __webpack_require__(1);
 var invariant = __webpack_require__(3);
-var warning = __webpack_require__(9);
+var warning = __webpack_require__(8);
 var assign = __webpack_require__(4);
 
 var ReactPropTypesSecret = __webpack_require__(11);
@@ -21818,7 +21839,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(7)(content, options);
+var update = __webpack_require__(6)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -21838,7 +21859,7 @@ if(false) {
 /* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(6)(undefined);
+exports = module.exports = __webpack_require__(9)(undefined);
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 
@@ -22150,7 +22171,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(7)(content, options);
+var update = __webpack_require__(6)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -22170,7 +22191,7 @@ if(false) {
 /* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(6)(undefined);
+exports = module.exports = __webpack_require__(9)(undefined);
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 
@@ -22206,7 +22227,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(7)(content, options);
+var update = __webpack_require__(6)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -22226,15 +22247,32 @@ if(false) {
 /* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(6)(undefined);
+exports = module.exports = __webpack_require__(9)(undefined);
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "._miedzyslowami_---3v301 {\n  content: ''; }\n\n#logo---OI0sG {\n  display: block;\n  margin: auto;\n  height: 2.5rem;\n  width: 13rem; }\n  #logo---OI0sG .text---22XA2 {\n    color: black;\n    font-size: 1rem;\n    font-weight: 900;\n    display: inline-block;\n    -webkit-animation: text---22XA2 1s ease-in 3;\n            animation: text---22XA2 1s ease-in 3;\n    -webkit-transform: translatez(0);\n            transform: translatez(0);\n    margin-top: 1rem; }\n    #logo---OI0sG .text__1---ZDiGl {\n      width: 1rem;\n      text-align: center;\n      left: 0rem;\n      -webkit-animation-delay: 150ms;\n              animation-delay: 150ms; }\n      #logo---OI0sG .text__1---ZDiGl:after {\n        display: none;\n        content: m; }\n    #logo---OI0sG .text__2---1stOf {\n      width: 1rem;\n      text-align: center;\n      left: 4rem;\n      -webkit-animation-delay: 230ms;\n              animation-delay: 230ms; }\n      #logo---OI0sG .text__2---1stOf:after {\n        display: none;\n        content: i; }\n    #logo---OI0sG .text__3---f_NHK {\n      width: 1rem;\n      text-align: center;\n      left: 8rem;\n      -webkit-animation-delay: 310ms;\n              animation-delay: 310ms; }\n      #logo---OI0sG .text__3---f_NHK:after {\n        display: none;\n        content: e; }\n    #logo---OI0sG .text__4---2uTJA {\n      width: 1rem;\n      text-align: center;\n      left: 12rem;\n      -webkit-animation-delay: 390ms;\n              animation-delay: 390ms; }\n      #logo---OI0sG .text__4---2uTJA:after {\n        display: none;\n        content: d; }\n    #logo---OI0sG .text__5---3lym8 {\n      width: 1rem;\n      text-align: center;\n      left: 16rem;\n      -webkit-animation-delay: 470ms;\n              animation-delay: 470ms; }\n      #logo---OI0sG .text__5---3lym8:after {\n        display: none;\n        content: z; }\n    #logo---OI0sG .text__6---tU2BE {\n      width: 1rem;\n      text-align: center;\n      left: 20rem;\n      -webkit-animation-delay: 550ms;\n              animation-delay: 550ms; }\n      #logo---OI0sG .text__6---tU2BE:after {\n        display: none;\n        content: y; }\n    #logo---OI0sG .text__7---3N0FA {\n      width: 1rem;\n      text-align: center;\n      left: 24rem;\n      -webkit-animation-delay: 630ms;\n              animation-delay: 630ms; }\n      #logo---OI0sG .text__7---3N0FA:after {\n        display: none;\n        content: s; }\n    #logo---OI0sG .text__8---2OEMn {\n      width: 1rem;\n      text-align: center;\n      left: 28rem;\n      -webkit-animation-delay: 710ms;\n              animation-delay: 710ms; }\n      #logo---OI0sG .text__8---2OEMn:after {\n        display: none;\n        content: l; }\n    #logo---OI0sG .text__9---3x03S {\n      width: 1rem;\n      text-align: center;\n      left: 32rem;\n      -webkit-animation-delay: 790ms;\n              animation-delay: 790ms; }\n      #logo---OI0sG .text__9---3x03S:after {\n        display: none;\n        content: o; }\n    #logo---OI0sG .text__10---3MY8p {\n      width: 1rem;\n      text-align: center;\n      left: 36rem;\n      -webkit-animation-delay: 870ms;\n              animation-delay: 870ms; }\n      #logo---OI0sG .text__10---3MY8p:after {\n        display: none;\n        content: w; }\n    #logo---OI0sG .text__11---VkxXM {\n      width: 1rem;\n      text-align: center;\n      left: 40rem;\n      -webkit-animation-delay: 950ms;\n              animation-delay: 950ms; }\n      #logo---OI0sG .text__11---VkxXM:after {\n        display: none;\n        content: a; }\n    #logo---OI0sG .text__12---Tb1oD {\n      width: 1rem;\n      text-align: center;\n      left: 44rem;\n      -webkit-animation-delay: 1030ms;\n              animation-delay: 1030ms; }\n      #logo---OI0sG .text__12---Tb1oD:after {\n        display: none;\n        content: m; }\n    #logo---OI0sG .text__13---3SSRk {\n      width: 1rem;\n      text-align: center;\n      left: 48rem;\n      -webkit-animation-delay: 1110ms;\n              animation-delay: 1110ms; }\n      #logo---OI0sG .text__13---3SSRk:after {\n        display: none;\n        content: i; }\n\n@-webkit-keyframes text---22XA2 {\n  0% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n  30% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n  45% {\n    -webkit-transform: translate3d(0, -2rem, 0);\n            transform: translate3d(0, -2rem, 0); }\n  100% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); } }\n\n@keyframes text---22XA2 {\n  0% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n  30% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n  45% {\n    -webkit-transform: translate3d(0, -2rem, 0);\n            transform: translate3d(0, -2rem, 0); }\n  100% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); } }\n", ""]);
 
 // exports
-
+exports.locals = {
+	"_miedzyslowami_": "_miedzyslowami_---3v301",
+	"logo": "logo---OI0sG",
+	"text": "text---22XA2",
+	"text__1": "text__1---ZDiGl",
+	"text__2": "text__2---1stOf",
+	"text__3": "text__3---f_NHK",
+	"text__4": "text__4---2uTJA",
+	"text__5": "text__5---3lym8",
+	"text__6": "text__6---tU2BE",
+	"text__7": "text__7---3N0FA",
+	"text__8": "text__8---2OEMn",
+	"text__9": "text__9---3x03S",
+	"text__10": "text__10---3MY8p",
+	"text__11": "text__11---VkxXM",
+	"text__12": "text__12---Tb1oD",
+	"text__13": "text__13---3SSRk"
+};
 
 /***/ }),
 /* 46 */
@@ -22251,7 +22289,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(7)(content, options);
+var update = __webpack_require__(6)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -22271,7 +22309,7 @@ if(false) {
 /* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(6)(undefined);
+exports = module.exports = __webpack_require__(9)(undefined);
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 
@@ -22303,7 +22341,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(7)(content, options);
+var update = __webpack_require__(6)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -22323,7 +22361,7 @@ if(false) {
 /* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(6)(undefined);
+exports = module.exports = __webpack_require__(9)(undefined);
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 

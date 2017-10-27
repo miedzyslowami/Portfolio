@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 $backgroundColor:red;
 $basicFont:'Raleway';
+
+//Logo
+$textDuration: 1s;
+$waveDuration: 2s;
+$logoTextString:'miedzyslowami';
+$logoTextToList:str-to-list($logoTextString);
+$logoText:m i e d z y s l o w a m i;
+$logoLength:length($logoText);
+$logoColor:black;
+
+$logoFontSize:1rem;
+$logoHeight:2.5 * $logoFontSize;
+$logoLetterBoxWidth:$logoFontSize;
+$logoWidth:$logoLetterBoxWidth * $logoLength;
+
 //Header
 $headerBackground:white;
 $headerFontSize:20px;
