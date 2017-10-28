@@ -18,6 +18,8 @@
     #mobile__menu{
       display:block;
       width:100%;
+      user-select: none;
+      cursor:pointer;
     }
     #navigation{
       height:0;
@@ -31,6 +33,8 @@
         padding: $menuItemPadding;
         text-transform: lowercase;
         letter-spacing: 3px;
+        user-select: none;
+        cursor:pointer;
         //The border and transition are set on a pseudo element to prevent transitioning the text and avoid adding markup.
         &:after {
           display:block;

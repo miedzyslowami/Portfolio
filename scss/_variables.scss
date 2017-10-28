@@ -12,6 +12,7 @@ $logoLength:length($logoText);
 $logoColor:black;
 
 $logoFontSize:1rem;
+$logoFontWeight:900;
 $logoHeight:2.5 * $logoFontSize;
 $logoLetterBoxWidth:$logoFontSize;
 $logoWidth:$logoLetterBoxWidth * $logoLength;
@@ -25,8 +26,17 @@ $showMenuTimer:1s;
 $headerPaddingTopBottom:20px;
 $menuItemPadding:20px;
 //there are 4 menu items---check the Header component state!
-$numberOfMenuItems:4;
+$numberOfMenuItems:3;
 $menuHeight:(2 * $headerPaddingTopBottom) + $numberOfMenuItems * ($headerFontSize + 2 * $menuItemPadding);
+//Works HEXA GRID
+$skillButtonColor:#5d245d;
+$worksFontSize:15px;
+$worksWidth:90%;
+$worksFontFamily:'Raleway', sans-serif;
+$worksBackgroundColor: pink;
+$worksTextColor:black;
+$workWidth:100%;
+
 //Footer
 $footerBackground:white;
 $footerFontSize:20px;
