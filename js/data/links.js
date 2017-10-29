@@ -44,5 +44,13 @@ module.exports =[
             alt:'nic',
             description:'Simple gallery with flexbox',
             imageUrl:'https://raw.githubusercontent.com/miedzyslowami/gallery/master/images/love.jpg'
+        },
+        {
+            title:"Cat's shelter",
+            url:'https://miedzyslowami.github.io/cat_shelter/',
+            tags:['react','sass','webpack','gulp','html'],
+            alt:'nic',
+            description:'Simple search app with filter',
+            imageUrl:'http://res.cloudinary.com/miedzyslowamicode/image/upload/v1509297275/Meta_images/cat_shelter.png'
         }
     ]

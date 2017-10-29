@@ -15,7 +15,6 @@ export class Works extends React.Component {
     }
     clearFilter = (e) =>{
         this.setState({filteredWorks:this.state.works,currentTags:[]});
-
     }
     filterGrid = (e) =>{
         let currentTags = this.state.currentTags;

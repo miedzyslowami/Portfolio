@@ -1,6 +1,90 @@
 @import '../variables.scss';
-#contact{
-  width:100vw;
-  height:100vh;
-  background-color: black;
+
+#contact {
+  background-color: $headerBackground;
+  font-size: $headerFontSize;
+  width: 100vw;
+  padding: $headerPaddingTopBottom 10px;
+  box-sizing: border-box;
+  text-align: center;
+  div{
+  border:1px solid green;
+  }
+  h3 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 25px 0;
+    font-weight: 100;
+  }
+  label{
+      transition: all .3s linear;
+      font-weight: 100;
+      letter-spacing: 2px;
+  }
+  #contact__form {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    & *{
+        display: block;
+        box-sizing: border-box;
+        max-width: 765px;
+        width: 100%;
+    }
+    & input {
+      margin: 10px auto 0;
+      padding: 15px 0 15px 45px;
+
+    }
+    i{
+      margin: 0;
+      width: 24px;
+      padding-left: 11px;
+      transform: translateY(208%);
+    }
+
+    #name {
+      .label__name {
+        transform: translateY(-150%);//-357%
+        border:1px solid blue;
+      }
+      .input__name {
+        border:1px solid red;
+        &:focus + .label__name, &:valid + .label__name{
+            transform: translateY(-275%);
+        }
+      }
+
+    }
+
+    #email {
+
+      .label__email {
+        transform: translateY(-146%);//-360
+        border:1px solid blue;
+      }
+      .input__email {
+      border:1px solid red;
+      &:focus + .label__email, &:valid + .label__email{
+          transform: translateY(-281%);
+      }
+      }
+
+    }
+    #message{
+      .label__textarea{
+        transform: translateY(-507%);
+        border:1px solid blue;
+      }
+      .message{
+        border:1px solid red;
+        padding: 15px 0 15px 45px;
+        height:150px;
+        font-size: 1rem;
+        &:focus + .label__textarea, &:valid + .label__textarea{
+            transform: translateY(-674%);
+        }
+      }
+    }
+  }
 }
