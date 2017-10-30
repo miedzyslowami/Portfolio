@@ -23136,7 +23136,7 @@ exports.locals = {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.Header = undefined;
 
@@ -23175,93 +23175,104 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Header = exports.Header = function (_React$Component) {
-  _inherits(Header, _React$Component);
+    _inherits(Header, _React$Component);
 
-  function Header(props) {
-    _classCallCheck(this, Header);
+    function Header(props) {
+        _classCallCheck(this, Header);
 
-    var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, props));
 
-    _this.dropDownMenu = function () {
-      _this.state.showMenu === false ? _this.setState({ className: _header2.default.show__menu, showMenu: true }) : _this.setState({ className: '', showMenu: false });
-    };
+        _this.dropDownMenu = function () {
+            _this.state.showMenu === false ? _this.setState({ className: _header2.default.show__menu, showMenu: true }) : _this.setState({ className: '', showMenu: false });
+        };
 
-    _this.scrollToSection = function (e) {
-      _this.dropDownMenu(); //make promise here!!!
-      _reactScroll.scroller.scrollTo(e.target.dataset.name, {
-        duration: 1500,
-        delay: 100,
-        smooth: true
-      });
-    };
+        _this.scrollToSection = function (e) {
+            var target = e.target.dataset.name;
+            _this.dropDownMenu();
+            var navigation = e.target.parentElement;
+            var transitionCounter = 0; //there are 5 trnasitions to end
 
-    _this.state = {
-      menuItems: ['About', 'Works', 'Contact'],
-      className: '',
-      showMenu: false
-    };
-    return _this;
-  }
+            waitForAllTransitionend(transitionCounter).then(function () {
+                _reactScroll.scroller.scrollTo(target, {
+                    duration: 1500,
+                    delay: 100,
+                    smooth: true
+                });
+            });
+            function waitForAllTransitionend(transitionCounter) {
+                return new Promise(function (resolve, reject) {
+                    navigation.addEventListener('transitionend', function () {
+                        transitionCounter++;
+                        transitionCounter === 5 ? true : false;
+                        if (transitionCounter === 5) {
+                            return resolve();
+                        }
+                    });
+                });
+            }
+        };
 
-  _createClass(Header, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _arguments = arguments;
-
-      var Link = _reactScroll2.default.Link;
-      var Element = _reactScroll2.default.Element;
-      var Events = _reactScroll2.default.Events;
-      var scroll = _reactScroll2.default.animateScroll;
-      var scrollSpy = _reactScroll2.default.scrollSpy;
-      Events.scrollEvent.register('begin', function (to, element) {
-        console.log("begin", _arguments);
-      });
-      Events.scrollEvent.register('end', function (to, element) {
-        console.log("end", _arguments);
-      });
-      scrollSpy.update();
+        _this.state = {
+            menuItems: ['About', 'Works', 'Contact'],
+            className: '',
+            showMenu: false
+        };
+        return _this;
     }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      Events.scrollEvent.remove('begin');
-      Events.scrollEvent.remove('end');
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
 
-      var menuItems = this.state.menuItems.map(function (item, i) {
-        return _react2.default.createElement(
-          'li',
-          { 'data-name': item, onClick: _this2.scrollToSection, key: i },
-          item
-        );
-      });
-      return _react2.default.createElement(
-        'header',
-        { className: _header2.default.header },
-        _react2.default.createElement(
-          'div',
-          { className: _header2.default.wrapper },
-          _react2.default.createElement(_logo2.default, null),
-          _react2.default.createElement(
-            'nav',
-            { id: _header2.default.mobile__menu },
-            _react2.default.createElement(_mobileMenu2.default, { handleClick: this.dropDownMenu }),
-            _react2.default.createElement(
-              'ul',
-              { id: _header2.default.navigation, className: this.state.className },
-              menuItems
-            )
-          )
-        )
-      );
-    }
-  }]);
+    _createClass(Header, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var Link = _reactScroll2.default.Link;
+            var Element = _reactScroll2.default.Element;
+            var Events = _reactScroll2.default.Events;
+            var scroll = _reactScroll2.default.animateScroll;
+            var scrollSpy = _reactScroll2.default.scrollSpy;
+            Events.scrollEvent.register('begin', function (to, element) {});
+            Events.scrollEvent.register('end', function (to, element) {});
+            scrollSpy.update();
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            Events.scrollEvent.remove('begin');
+            Events.scrollEvent.remove('end');
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
 
-  return Header;
+            var menuItems = this.state.menuItems.map(function (item, i) {
+                return _react2.default.createElement(
+                    'li',
+                    { 'data-name': item, onClick: _this2.scrollToSection, key: i },
+                    item
+                );
+            });
+            return _react2.default.createElement(
+                'header',
+                { className: _header2.default.header },
+                _react2.default.createElement(
+                    'div',
+                    { className: _header2.default.wrapper },
+                    _react2.default.createElement(_logo2.default, null),
+                    _react2.default.createElement(
+                        'nav',
+                        { id: _header2.default.mobile__menu },
+                        _react2.default.createElement(_mobileMenu2.default, { handleClick: this.dropDownMenu }),
+                        _react2.default.createElement(
+                            'ul',
+                            { id: _header2.default.navigation, className: this.state.className },
+                            menuItems
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Header;
 }(_react2.default.Component);
 
 exports.default = Header;
@@ -24012,7 +24023,7 @@ var Contact = exports.Contact = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { id: _contact2.default.name },
-                        _react2.default.createElement('i', { 'class': 'fa fa-user  fa-lg', 'aria-hidden': 'true' }),
+                        _react2.default.createElement('i', { className: 'fa fa-user  fa-lg', 'aria-hidden': 'true' }),
                         _react2.default.createElement('input', { id: 'name', className: _contact2.default.input__name, name: 'name', type: 'text', required: true }),
                         _react2.default.createElement(
                             'label',
@@ -24023,7 +24034,7 @@ var Contact = exports.Contact = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { id: _contact2.default.email },
-                        _react2.default.createElement('i', { 'class': 'fa fa-envelope  fa-lg', 'aria-hidden': 'true' }),
+                        _react2.default.createElement('i', { className: 'fa fa-envelope  fa-lg', 'aria-hidden': 'true' }),
                         _react2.default.createElement('input', { id: 'email', className: _contact2.default.input__email, name: 'email', type: 'email', required: true }),
                         _react2.default.createElement(
                             'label',
@@ -24034,7 +24045,7 @@ var Contact = exports.Contact = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { id: _contact2.default.message },
-                        _react2.default.createElement('i', { 'class': 'fa fa-pencil  fa-lg', 'aria-hidden': 'true' }),
+                        _react2.default.createElement('i', { className: 'fa fa-pencil  fa-lg', 'aria-hidden': 'true' }),
                         _react2.default.createElement('textarea', { id: 'message', className: _contact2.default.message, required: true }),
                         _react2.default.createElement(
                             'label',
@@ -24042,7 +24053,7 @@ var Contact = exports.Contact = function (_React$Component) {
                             'Type your message'
                         )
                     ),
-                    _react2.default.createElement('input', { className: _contact2.default.submit__button, type: 'submit', value: 'send' })
+                    _react2.default.createElement('input', { id: _contact2.default.submit__button, type: 'submit', value: 'send' })
                 )
             );
         }
@@ -24093,7 +24104,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 
 // module
-exports.push([module.i, "#contact---2tTdg {\n  background-color: white;\n  font-size: 20px;\n  width: 100vw;\n  padding: 20px 10px;\n  box-sizing: border-box;\n  text-align: center; }\n  #contact---2tTdg div {\n    border: 1px solid green; }\n  #contact---2tTdg h3 {\n    text-transform: uppercase;\n    letter-spacing: 3px;\n    padding: 25px 0;\n    font-weight: 100; }\n  #contact---2tTdg label {\n    transition: all .3s linear;\n    font-weight: 100;\n    letter-spacing: 2px; }\n  #contact---2tTdg #contact__form---3jq5V {\n    width: 100%;\n    max-width: 1200px;\n    margin: 0 auto; }\n    #contact---2tTdg #contact__form---3jq5V * {\n      display: block;\n      box-sizing: border-box;\n      max-width: 765px;\n      width: 100%; }\n    #contact---2tTdg #contact__form---3jq5V input {\n      margin: 10px auto 0;\n      padding: 15px 0 15px 45px; }\n    #contact---2tTdg #contact__form---3jq5V i {\n      margin: 0;\n      width: 24px;\n      padding-left: 11px;\n      -webkit-transform: translateY(208%);\n              transform: translateY(208%); }\n    #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .label__name---3TckC {\n      -webkit-transform: translateY(-150%);\n              transform: translateY(-150%);\n      border: 1px solid blue; }\n    #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .input__name---r_lW5 {\n      border: 1px solid red; }\n      #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .input__name---r_lW5:focus + .label__name---3TckC, #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .input__name---r_lW5:valid + .label__name---3TckC {\n        -webkit-transform: translateY(-275%);\n                transform: translateY(-275%); }\n    #contact---2tTdg #contact__form---3jq5V #email---2jegp .label__email---31E31 {\n      -webkit-transform: translateY(-146%);\n              transform: translateY(-146%);\n      border: 1px solid blue; }\n    #contact---2tTdg #contact__form---3jq5V #email---2jegp .input__email---3VMv9 {\n      border: 1px solid red; }\n      #contact---2tTdg #contact__form---3jq5V #email---2jegp .input__email---3VMv9:focus + .label__email---31E31, #contact---2tTdg #contact__form---3jq5V #email---2jegp .input__email---3VMv9:valid + .label__email---31E31 {\n        -webkit-transform: translateY(-281%);\n                transform: translateY(-281%); }\n    #contact---2tTdg #contact__form---3jq5V #message---1iGxy .label__textarea---1WFED {\n      -webkit-transform: translateY(-507%);\n              transform: translateY(-507%);\n      border: 1px solid blue; }\n    #contact---2tTdg #contact__form---3jq5V #message---1iGxy .message---1iGxy {\n      border: 1px solid red;\n      padding: 15px 0 15px 45px;\n      height: 150px;\n      font-size: 1rem; }\n      #contact---2tTdg #contact__form---3jq5V #message---1iGxy .message---1iGxy:focus + .label__textarea---1WFED, #contact---2tTdg #contact__form---3jq5V #message---1iGxy .message---1iGxy:valid + .label__textarea---1WFED {\n        -webkit-transform: translateY(-674%);\n                transform: translateY(-674%); }\n", ""]);
+exports.push([module.i, "#contact---2tTdg {\n  background-color: white;\n  font-size: 20px;\n  width: 100vw;\n  padding: 20px 10px;\n  box-sizing: border-box;\n  text-align: center; }\n  #contact---2tTdg div {\n    margin: 0 auto; }\n  #contact---2tTdg h3 {\n    text-transform: uppercase;\n    letter-spacing: 3px;\n    padding: 25px 0 5px;\n    font-weight: 100; }\n  #contact---2tTdg label {\n    transition: all .3s linear;\n    font-weight: 100;\n    letter-spacing: 2px; }\n  #contact---2tTdg #contact__form---3jq5V {\n    width: 100%;\n    max-width: 1200px;\n    margin: 0 auto; }\n    #contact---2tTdg #contact__form---3jq5V * {\n      display: block;\n      box-sizing: border-box;\n      max-width: 765px;\n      width: 100%;\n      margin-top: 15px; }\n    #contact---2tTdg #contact__form---3jq5V input {\n      margin: 10px auto 0;\n      padding: 15px 0 15px 45px;\n      box-sizing: border-box;\n      background-color: pink;\n      font-size: 1rem; }\n    #contact---2tTdg #contact__form---3jq5V i {\n      margin: 0;\n      width: 24px;\n      padding-left: 11px;\n      -webkit-transform: translateY(208%);\n              transform: translateY(208%); }\n    #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 {\n      height: 78px; }\n      #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .label__name---3TckC {\n        -webkit-transform: translateY(-212%);\n                transform: translateY(-212%); }\n      #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .input__name---r_lW5:focus + .label__name---3TckC, #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .input__name---r_lW5:valid + .label__name---3TckC {\n        -webkit-transform: translateY(-405%);\n                transform: translateY(-405%); }\n      #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .input__name---r_lW5:focus + .label__name---3TckC, #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .input__name---r_lW5:valid + .label__name---3TckC {\n        -webkit-transform: translateY(-405%);\n                transform: translateY(-405%); }\n    #contact---2tTdg #contact__form---3jq5V #email---2jegp {\n      height: 78px; }\n      #contact---2tTdg #contact__form---3jq5V #email---2jegp .label__email---31E31 {\n        -webkit-transform: translateY(-220%);\n                transform: translateY(-220%); }\n      #contact---2tTdg #contact__form---3jq5V #email---2jegp .input__email---3VMv9:focus + .label__email---31E31, #contact---2tTdg #contact__form---3jq5V #email---2jegp .input__email---3VMv9:valid + .label__email---31E31 {\n        -webkit-transform: translateY(-415%);\n                transform: translateY(-415%); }\n    #contact---2tTdg #contact__form---3jq5V #message---1iGxy {\n      height: 190px; }\n      #contact---2tTdg #contact__form---3jq5V #message---1iGxy .label__textarea---1WFED {\n        -webkit-transform: translateY(-670%);\n                transform: translateY(-670%); }\n      #contact---2tTdg #contact__form---3jq5V #message---1iGxy .message---1iGxy {\n        padding: 15px 0 0 45px;\n        height: 150px;\n        font-size: 1rem;\n        background-color: pink; }\n        #contact---2tTdg #contact__form---3jq5V #message---1iGxy .message---1iGxy:focus + .label__textarea---1WFED, #contact---2tTdg #contact__form---3jq5V #message---1iGxy .message---1iGxy:valid + .label__textarea---1WFED {\n          -webkit-transform: translateY(-829%);\n                  transform: translateY(-829%); }\n    #contact---2tTdg #contact__form---3jq5V #submit__button---1-rf8 {\n      font-weight: 100;\n      text-transform: uppercase;\n      font-size: 1.5rem;\n      border-radius: 50%;\n      width: auto;\n      text-align: center;\n      width: 100px;\n      height: 100px;\n      padding: 0;\n      border: 2px solid black;\n      background-color: transparent;\n      letter-spacing: 5px; }\n", ""]);
 
 // exports
 exports.locals = {
@@ -24106,7 +24117,8 @@ exports.locals = {
 	"label__email": "label__email---31E31",
 	"input__email": "input__email---3VMv9",
 	"message": "message---1iGxy",
-	"label__textarea": "label__textarea---1WFED"
+	"label__textarea": "label__textarea---1WFED",
+	"submit__button": "submit__button---1-rf8"
 };
 
 /***/ }),

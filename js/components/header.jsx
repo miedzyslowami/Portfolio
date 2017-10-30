@@ -25,10 +25,8 @@ export class Header extends React.Component {
       let scroll     = Scroll.animateScroll;
       let scrollSpy  = Scroll.scrollSpy;
       Events.scrollEvent.register('begin', (to, element)=> {
-        console.log("begin", arguments);
       });
       Events.scrollEvent.register('end', (to, element)=> {
-        console.log("end", arguments);
       });
       scrollSpy.update();}
 
@@ -37,12 +35,30 @@ export class Header extends React.Component {
       Events.scrollEvent.remove('end');
     }
     scrollToSection = (e) =>{
-        this.dropDownMenu();//make promise here!!!
-            scroller.scrollTo(e.target.dataset.name, {
+        let target = e.target.dataset.name;
+        this.dropDownMenu();
+        let navigation = e.target.parentElement;
+        let transitionCounter = 0;//there are 5 trnasitions to end
+
+        waitForAllTransitionend(transitionCounter).then(()=>{
+            scroller.scrollTo(target, {
               duration: 1500,
               delay: 100,
               smooth: true
         })
+        })
+        function waitForAllTransitionend(transitionCounter){
+            return new Promise((resolve, reject)=>{
+                navigation.addEventListener('transitionend',()=>{
+                    transitionCounter ++;
+                    transitionCounter === 5 ? true : false;
+                    if(transitionCounter === 5 ){
+                        return resolve();
+                    }
+                })
+            })
+        }
+
     }
 
     render() {
