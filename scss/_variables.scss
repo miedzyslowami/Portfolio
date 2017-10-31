@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-
-
-
-$backgroundColor:white;
+$pallete0:#FFFFFF,pink,grey,black,#459bb5;
+$pallete1:#FFFFFF,#488799,#A7BAB8,#383324;
+$pallete2:#1D1E2C,#488799,#273043,#FFFFFF,#A7BAB8;
+$pallete3:#A7BAB8,#273043,#EFF6EE,#273043,white;
+$currentPallete:$pallete0;
+//background/maincolor/accent/FontColor
+$backgroundColor:nth($currentPallete,1);
 $basicFont:'Raleway';
-$linkColor:pink;
-$rulerColor:grey;
+$linkColor:nth($currentPallete,5);
+$rulerColor:nth($currentPallete,3);
 //Logo
 $textDuration: 1s;
 $waveDuration: 2s;
@@ -13,7 +16,7 @@ $logoTextString:'miedzyslowami';
 $logoTextToList:str-to-list($logoTextString);
 $logoText:m i e d z y s l o w a m i;
 $logoLength:length($logoText);
-$logoColor:black;
+$logoColor:nth($currentPallete,4);
 
 $logoFontSize:1rem;
 $logoFontWeight:900;
@@ -22,10 +25,10 @@ $logoLetterBoxWidth:$logoFontSize;
 $logoWidth:$logoLetterBoxWidth * $logoLength;
 
 //Header
-$headerBackground:white;
+$headerBackground:nth($currentPallete,1);
 $headerFontSize:20px;
 $menuIconSize:100px;
-$menuIconFill:pink;
+$menuIconFill:nth($currentPallete,2);
 $showMenuTimer:1s;
 $headerPaddingTopBottom:20px;
 $menuItemPadding:20px;
@@ -34,22 +37,24 @@ $numberOfMenuItems:3;
 $menuHeight:(2 * $headerPaddingTopBottom) + $numberOfMenuItems * ($headerFontSize + 2 * $menuItemPadding);
 //About
 
-$aboutBackgroundColor:white;
+$aboutBackgroundColor:nth($currentPallete,1);
 //Works HEXA GRID
-$skillButtonColor:#5d245d;
+$skillButtonColor:nth($currentPallete,5);
 $worksFontSize:15px;
 $worksWidth:90%;
 $worksFontFamily:'Raleway', sans-serif;
-$worksBackgroundColor: pink;
-$worksTextColor:black;
+$worksBackgroundColor: nth($currentPallete,1);
+$worksTextColor:nth($currentPallete,4);
 $workWidth:100%;
+$workClearButtonColor:nth($currentPallete,1);
 //Contact form
-$contactInputBackground:pink;
-$contactBorderColor:#5d245d;
+$contactInputBackground:nth($currentPallete,5);
+$contactBorderColor:nth($currentPallete,2);
 $contactFontSize:1.5rem;
-$contactIconColor:grey;
-$contactFocusInputBackground:grey;
+$contactFontColor:nth($currentPallete,4);
+$contactIconColor:nth($currentPallete,4);
+$contactFocusInputBackground:nth($currentPallete,3);
 //Footer
-$footerBackground:white;
+$footerBackground:nth($currentPallete,1);
 $footerFontSize:20px;
-$footerFontColor:black;
+$footerFontColor:nth($currentPallete,4);

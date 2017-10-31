@@ -8,10 +8,10 @@ module.exports =[
             imageUrl:'http://3.bp.blogspot.com/_6pbSFKC8YH4/S-QJu6OV25I/AAAAAAAABkg/j0v4kqDcoaA/s1600/header.png'
           },
         {
-            title:"Event palnner with auth",
+            title:"Palnner with auth",
             url:'https://miedzyslowami.github.io/event-planner-with-auth/',
             tags:['react','sass','webpack', 'gulp','rwd','firebase','facebook-auth'],
-            description:'Login via Facebook and store your events',
+            description:'Log with Facebook and add events',
             imageUrl:'http://res.cloudinary.com/miedzyslowamicode/image/upload/v1504528544/logo_ldilkt.png'
         },
         {
@@ -33,9 +33,9 @@ module.exports =[
             title:"Space API",
             url:'https://miedzyslowami.github.io/space_photos/',
             tags:['ajax','jquery','api','css'],
-            alt:'Displays photos from NASA API. Using Ajax and jQuery.',
-            description:'',
-            imageUrl:'https://apod.nasa.gov/apod/image/1705/Hickson90_Czernetz_1633.jpg'
+            alt:'',
+            description:'Photos from NASA API',
+            imageUrl:'https://apod.nasa.gov/apod/image/1705/casa_main_960.jpg'
         },
         {
             title:"Flexbox gallery",

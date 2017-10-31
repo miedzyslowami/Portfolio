@@ -43,7 +43,7 @@
       margin: 10px auto;
       width: 60px;
       background-color: $skillButtonColor;
-      color: white;
+      color: $workClearButtonColor;
       letter-spacing: 4px;
       user-select: none;
       cursor:pointer;
@@ -78,10 +78,13 @@
         height: 100%;
         margin: 0 auto;
         transform: rotate3d(0,0,0,0deg);
+        filter: contrast(1.4);
+
       }
 
       h3,
       p {
+
         width: 100%;
         padding: 5%;
         box-sizing: border-box;
@@ -112,6 +115,7 @@
         top: 50%;
         padding-bottom: 50%;
         transform: translate3d(0,100%,0);
+        line-height: 1.2rem;
       }
     }
 
@@ -205,15 +209,17 @@
     /* <- 5-4  hexagons per row */
     #work_links {
       padding-bottom: 4.4%;
+      .work {
+        width: $workWidth/5;
+        &:nth-child(9n+6) {
+          /* first hexagon of even rows */
+          margin-left: $workWidth/10;
+          /* = width of .hex / 2  to indent even rows */
+        }
+      }
+
     }
 
-    .work {
-      width: $workWidth/5;
-      &:nth-child(9n+6) {
-        /* first hexagon of even rows */
-        margin-left: $workWidth/10;
-        /* = width of .hex / 2  to indent even rows */
-      }
-    }
+
   }
 }

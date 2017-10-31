@@ -30,7 +30,7 @@ export class Works extends React.Component {
             return (
                 <li key={i} data-tags={work.tags} className={scss.work}>
                   <div className={scss.work__in}>
-                    <a className={scss.work__link} href={work.url}>
+                    <a target='_blank' className={scss.work__link} href={work.url}>
                       <img src={work.imageUrl} alt={work.alt} />
                       <h3>{work.title}</h3>
                       <p>{work.description}</p>

@@ -14,6 +14,7 @@
   label{
       transition: all .3s linear;
       letter-spacing: 2px;
+      color:$contactFontColor;
   }
 
   #contact__form {
@@ -40,6 +41,7 @@
     }
     textarea{
       outline: none;
+
 
     }
     & i{
