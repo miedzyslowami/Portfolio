@@ -67,6 +67,7 @@ export class Header extends React.Component {
         })
         return (
           <header className={scss.header}>
+            <h1 className={scss.main__heading}>Portfolio</h1>
               <div className={scss.wrapper}>
                 <Logo/>
                 <nav id={scss.mobile__menu}>

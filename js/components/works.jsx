@@ -17,7 +17,7 @@ export class Works extends React.Component {
         this.setState({filteredWorks:this.state.works,currentTags:[]});
     }
     filterGrid = (e) =>{
-        let currentTags = this.state.currentTags;
+      let currentTags = this.state.currentTags;
         currentTags.push(e.target.dataset.tag);
         let currentWorks = Object.values(this.state.filteredWorks);
         let newFilteredWorks = currentWorks.filter((work,i,currentWorks)=>{
@@ -48,7 +48,7 @@ export class Works extends React.Component {
           })
         return (
             <section name='Works' id={scss.works}>
-                    <h2>Take a look at my works!</h2>
+                    <h2>My works!</h2>
                     <div id={scss.works__search}>
                     <ul><h3>Pick a tag to find a skill that you want to check.</h3>
                         {skills}

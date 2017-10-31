@@ -33,11 +33,15 @@ componentWillUnmount() {
 }
     render() {
         return (
-            <div className={scss.root}>
+            <div>
             <Header/>
+            <hr/>
             <About/>
+            <hr/>
             <Works/>
+            <hr/>
             <Contact/>
+            <hr/>
             <Footer/>
           </div>
         )

@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-$backgroundColor:red;
-$basicFont:'Raleway';
 
+
+
+$backgroundColor:white;
+$basicFont:'Raleway';
+$linkColor:pink;
+$rulerColor:grey;
 //Logo
 $textDuration: 1s;
 $waveDuration: 2s;
@@ -28,6 +32,9 @@ $menuItemPadding:20px;
 //there are 4 menu items---check the Header component state!
 $numberOfMenuItems:3;
 $menuHeight:(2 * $headerPaddingTopBottom) + $numberOfMenuItems * ($headerFontSize + 2 * $menuItemPadding);
+//About
+
+$aboutBackgroundColor:white;
 //Works HEXA GRID
 $skillButtonColor:#5d245d;
 $worksFontSize:15px;
@@ -40,6 +47,8 @@ $workWidth:100%;
 $contactInputBackground:pink;
 $contactBorderColor:#5d245d;
 $contactFontSize:1.5rem;
+$contactIconColor:grey;
+$contactFocusInputBackground:grey;
 //Footer
 $footerBackground:white;
 $footerFontSize:20px;

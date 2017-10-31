@@ -6,6 +6,12 @@
   width:100vw;
   padding:$headerPaddingTopBottom 10px;
   box-sizing: border-box;
+  .main__heading{
+    text-indent: -100%;
+    visibility: none;
+    height:0;
+    width:0;
+  }
   .wrapper{
     width:100%;
     max-width:1200px;

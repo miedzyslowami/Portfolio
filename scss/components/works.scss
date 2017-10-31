@@ -1,21 +1,20 @@
 @import '../variables.scss';
 
 #works {
-  h2,h3{
+  width:100vw;
+  background-color: $aboutBackgroundColor;
+  text-align: center;
+  padding: 11px;
+  box-sizing: border-box;
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+  h3{
     width: 100%;
     padding:10px;
     box-sizing: border-box;
-  }
-  h2{
-    font-size: 24px;
-    text-transform: uppercase;
-    line-height: 2rem;
-    margin: 0 auto;
-    text-align: center;
-  }
-  h3{
     font-size: 18px;
     line-height: 2rem;
+
   }
   #works__search{
     .skill__button,.skill__button__active{
@@ -46,7 +45,6 @@
       background-color: $skillButtonColor;
       color: white;
       letter-spacing: 4px;
-      font-weight: 100;
       user-select: none;
       cursor:pointer;
     }
@@ -89,7 +87,6 @@
         box-sizing: border-box;
         background-color: $worksBackgroundColor;
         color:$worksTextColor;
-        font-weight: 300;
         transition: transform 0.2s ease-out, opacity 0.3s ease-out;
       }
 

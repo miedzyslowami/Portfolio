@@ -9,43 +9,45 @@
   text-align: center;
   div{
   margin:0 auto;
+  }
 
-  }
-  h3 {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    padding: 25px 0 5px;
-    font-weight: 100;
-  }
   label{
       transition: all .3s linear;
-      font-weight: 100;
       letter-spacing: 2px;
   }
+
   #contact__form {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    & *{
+    margin: -30px auto 0;
+    *{
         display: block;
         box-sizing: border-box;
         max-width: 765px;
         width: 100%;
         margin-top: 15px;
     }
-    & input {
+    input {
       margin: 10px auto 0;
       padding: 15px 0 15px 45px;
       box-sizing: border-box;
       background-color: $contactInputBackground;
       font-size: 1rem;
+      outline: none;
+      &:focus{
+          background-color: $contactFocusInputBackground;
+      }
+    }
+    textarea{
+      outline: none;
 
     }
-    i{
+    & i{
       margin: 0;
       width: 24px;
       padding-left: 11px;
       transform: translateY(208%);
+      color:$contactIconColor;
     }
 
     #name {
@@ -67,7 +69,6 @@
       height:78px;
       .label__email {
         transform: translateY(-220%);//-360
-
       }
       .input__email {
       &:focus + .label__email, &:valid + .label__email{
@@ -86,13 +87,15 @@
         height:150px;
         font-size: 1rem;
         background-color: $contactInputBackground;
+        &:focus{
+            background-color: $contactFocusInputBackground;
+        }
         &:focus + .label__textarea, &:valid + .label__textarea{
             transform: translateY(-829%);
         }
       }
     }
     #submit__button{
-      font-weight: 100;
       text-transform: uppercase;
       font-size: 1.5rem;
       border-radius: 50%;
