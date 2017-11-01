@@ -7,15 +7,14 @@ TECHNOLOGIES: HTML5, CSS, SASS, SASS-MODULES,REACT, FIREBASE, REUSABLE-COMPONENT
 ## **Description:**  
 Simple portfolio created with reusable-component approach. For the first time I am using SASS-MODULES binded with REACT-COMPONENTS and as for now it works fine :).
 
-1.RWD: progressive enhancement approach
+### **1.RWD: progressive enhancement approach**
 Site is created for mobile view and I hardly use breakpoints (only for heksagon gallery). Looks good on each screen, however I plan to add more elements for weider screens.
 
-2.Menu - I made smooth menu transiton using Promise and react-scroll package.
+### **2.Menu - I made smooth menu transiton using Promise and react-scroll package.**
 
-3.Section Works displays hexagon gallery that adapts to different screen seizes.
+### **3.Section Works displays hexagon gallery that adapts to different screen seizes.**
 
-4.Contact form is conected to Firebase and has simple validation.
-
+### **4.Contact form is conected to Firebase and has simple validation.**
 
 Installation:
 
