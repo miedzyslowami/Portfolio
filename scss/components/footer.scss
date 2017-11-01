@@ -4,6 +4,7 @@
   background-color: $footerBackground;
   width: 100vw;
   font-size: $footerFontSize;
+  box-sizing: border-box;
   .copyrights {
     display: block;
     text-align: center;

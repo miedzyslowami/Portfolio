@@ -90,7 +90,7 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(67));
 __export(__webpack_require__(68));
-__export(__webpack_require__(46));
+__export(__webpack_require__(47));
 __export(__webpack_require__(158));
 __export(__webpack_require__(159));
 __export(__webpack_require__(160));
@@ -4291,7 +4291,7 @@ var utils = __webpack_require__(29);
 var scrollSpy = __webpack_require__(64);
 var defaultScroller = __webpack_require__(65);
 var assign = __webpack_require__(11);
-var PropTypes = __webpack_require__(61);
+var PropTypes = __webpack_require__(62);
 var scrollHash = __webpack_require__(140);
 
 var protoTypes = {
@@ -5773,7 +5773,7 @@ var util_1 = __webpack_require__(0);
 var util_2 = __webpack_require__(1);
 var util_3 = __webpack_require__(0);
 var AuthTokenProvider_1 = __webpack_require__(192);
-var StatsManager_1 = __webpack_require__(50);
+var StatsManager_1 = __webpack_require__(51);
 var StatsReporter_1 = __webpack_require__(194);
 var StatsListener_1 = __webpack_require__(88);
 var EventQueue_1 = __webpack_require__(195);
@@ -6803,6 +6803,22 @@ module.exports = ExecutionEnvironment;
 "use strict";
 
 
+exports.Link = __webpack_require__(137);
+exports.Button = __webpack_require__(141);
+exports.Element = __webpack_require__(142);
+exports.Helpers = __webpack_require__(28);
+exports.scroller = __webpack_require__(65);
+exports.Events = __webpack_require__(45);
+exports.scrollSpy = __webpack_require__(64);
+exports.animateScroll = __webpack_require__(66);
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -6832,7 +6848,7 @@ var removePassiveEventListener = exports.removePassiveEventListener = function r
 };
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6853,7 +6869,7 @@ var Events = {
 module.exports = Events;
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports) {
 
 var g;
@@ -6880,7 +6896,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6923,7 +6939,7 @@ exports.CONSTANTS = {
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7238,7 +7254,7 @@ SyncPoint_1.SyncPoint.__referenceConstructor = Reference;
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7602,7 +7618,7 @@ exports.ImmutableTree = ImmutableTree;
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7742,7 +7758,7 @@ exports.IndexedFilter = IndexedFilter;
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7791,7 +7807,7 @@ exports.StatsManager = StatsManager;
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7931,7 +7947,7 @@ exports.RepoManager = RepoManager;
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7945,7 +7961,7 @@ exports.RepoManager = RepoManager;
 /* harmony export (immutable) */ __webpack_exports__["a"] = looseObjectSpec;
 /* harmony export (immutable) */ __webpack_exports__["d"] = nullFunctionSpec;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__error__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__metadata__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__metadata__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__type__ = __webpack_require__(8);
 /**
  * Copyright 2017 Google Inc.
@@ -8085,7 +8101,7 @@ function nullFunctionSpec(opt_optional) {
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8102,7 +8118,7 @@ function nullFunctionSpec(opt_optional) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__location__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__path__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__type__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__url__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__url__ = __webpack_require__(55);
 /**
  * Copyright 2017 Google Inc.
  *
@@ -8281,7 +8297,7 @@ function metadataValidator(p) {
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8336,7 +8352,7 @@ function makeQueryString(params) {
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8388,7 +8404,7 @@ function remove(array, elem) {
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8469,7 +8485,7 @@ module.exports = EventListener;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8540,7 +8556,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8583,7 +8599,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8613,7 +8629,7 @@ function focusNode(node) {
 module.exports = focusNode;
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8655,7 +8671,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {/**
@@ -8690,7 +8706,7 @@ if (process.env.NODE_ENV !== 'production') {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8770,29 +8786,13 @@ var Logo = exports.Logo = function (_React$Component) {
 exports.default = Logo;
 
 /***/ }),
-/* 63 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.Link = __webpack_require__(137);
-exports.Button = __webpack_require__(141);
-exports.Element = __webpack_require__(142);
-exports.Helpers = __webpack_require__(28);
-exports.scroller = __webpack_require__(65);
-exports.Events = __webpack_require__(44);
-exports.scrollSpy = __webpack_require__(64);
-exports.animateScroll = __webpack_require__(66);
-
-/***/ }),
 /* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(43),
+var _require = __webpack_require__(44),
     addPassiveEventListener = _require.addPassiveEventListener;
 
 var eventThrottler = function eventThrottler(eventHandler) {
@@ -8892,7 +8892,7 @@ var assign = __webpack_require__(11);
 
 var utils = __webpack_require__(29);
 var animateScroll = __webpack_require__(66);
-var events = __webpack_require__(44);
+var events = __webpack_require__(45);
 
 var __mapped = {};
 var __activeLink = void 0;
@@ -9000,7 +9000,7 @@ var assign = __webpack_require__(11);
 var utils = __webpack_require__(29);
 var smooth = __webpack_require__(138);
 var cancelEvents = __webpack_require__(139);
-var events = __webpack_require__(44);
+var events = __webpack_require__(45);
 
 /*
  * Gets the easing type from the smooth prop within options.
@@ -9211,7 +9211,7 @@ module.exports = {
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var constants_1 = __webpack_require__(46);
+var constants_1 = __webpack_require__(47);
 /**
  * Throws an error if the provided assertion is falsy
  * @param {*} assertion The assertion to be tested for falsiness
@@ -9735,9 +9735,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(1);
 var parser_1 = __webpack_require__(72);
 var Path_1 = __webpack_require__(2);
-var Reference_1 = __webpack_require__(47);
+var Reference_1 = __webpack_require__(48);
 var Repo_1 = __webpack_require__(35);
-var RepoManager_1 = __webpack_require__(51);
+var RepoManager_1 = __webpack_require__(52);
 var util_2 = __webpack_require__(0);
 var validation_1 = __webpack_require__(17);
 /**
@@ -13707,7 +13707,7 @@ exports.Connection = Connection;
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(1);
 var CountedSet_1 = __webpack_require__(84);
-var StatsManager_1 = __webpack_require__(50);
+var StatsManager_1 = __webpack_require__(51);
 var PacketReceiver_1 = __webpack_require__(199);
 var Constants_1 = __webpack_require__(31);
 var util_2 = __webpack_require__(0);
@@ -14344,7 +14344,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var app_1 = __webpack_require__(15);
 var util_1 = __webpack_require__(0);
 var util_2 = __webpack_require__(1);
-var StatsManager_1 = __webpack_require__(50);
+var StatsManager_1 = __webpack_require__(51);
 var Constants_1 = __webpack_require__(31);
 var util_3 = __webpack_require__(0);
 var storage_1 = __webpack_require__(30);
@@ -14778,7 +14778,7 @@ exports.ServerActions = ServerActions;
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var IndexedFilter_1 = __webpack_require__(49);
+var IndexedFilter_1 = __webpack_require__(50);
 var PriorityIndex_1 = __webpack_require__(4);
 var Node_1 = __webpack_require__(7);
 var ChildrenNode_1 = __webpack_require__(6);
@@ -15308,11 +15308,11 @@ var ErrorCode;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Reference; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__implementation_args__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__implementation_args__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__implementation_blob__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__implementation_error__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__implementation_location__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__implementation_metadata__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__implementation_metadata__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__implementation_object__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__implementation_path__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__implementation_requests__ = __webpack_require__(104);
@@ -15794,14 +15794,14 @@ var FbsBlob = /** @class */ (function () {
 /* harmony export (immutable) */ __webpack_exports__["f"] = getResumableUploadStatus;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return resumableUploadChunkSize; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = continueResumableUpload;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__array__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__array__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blob__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__error__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__metadata__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__metadata__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__object__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__requestinfo__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__type__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__url__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__url__ = __webpack_require__(55);
 /**
  * Copyright 2017 Google Inc.
  *
@@ -16171,7 +16171,7 @@ var _header = __webpack_require__(129);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _logo = __webpack_require__(62);
+var _logo = __webpack_require__(63);
 
 var _logo2 = _interopRequireDefault(_logo);
 
@@ -16183,7 +16183,11 @@ var _contact = __webpack_require__(146);
 
 var _contact2 = _interopRequireDefault(_contact);
 
-var _reactScroll = __webpack_require__(63);
+var _socialIcons = __webpack_require__(235);
+
+var _socialIcons2 = _interopRequireDefault(_socialIcons);
+
+var _reactScroll = __webpack_require__(43);
 
 var _reactScroll2 = _interopRequireDefault(_reactScroll);
 
@@ -18009,7 +18013,7 @@ module.exports = ReactEntry;
  LICENSE file in the root directory of this source tree.
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(3);__webpack_require__(16);var l=__webpack_require__(42),n=__webpack_require__(11),ba=__webpack_require__(56),ca=__webpack_require__(12),da=__webpack_require__(26),ea=__webpack_require__(57),fa=__webpack_require__(58),ha=__webpack_require__(59),ia=__webpack_require__(60);
+var aa=__webpack_require__(3);__webpack_require__(16);var l=__webpack_require__(42),n=__webpack_require__(11),ba=__webpack_require__(57),ca=__webpack_require__(12),da=__webpack_require__(26),ea=__webpack_require__(58),fa=__webpack_require__(59),ha=__webpack_require__(60),ia=__webpack_require__(61);
 function w(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:w("227");
 function ja(a){switch(a){case "svg":return"http://www.w3.org/2000/svg";case "math":return"http://www.w3.org/1998/Math/MathML";default:return"http://www.w3.org/1999/xhtml"}}
 var ka={Namespaces:{html:"http://www.w3.org/1999/xhtml",mathml:"http://www.w3.org/1998/Math/MathML",svg:"http://www.w3.org/2000/svg"},getIntrinsicNamespace:ja,getChildNamespace:function(a,b){return null==a||"http://www.w3.org/1999/xhtml"===a?ja(b):"http://www.w3.org/2000/svg"===a&&"foreignObject"===b?"http://www.w3.org/1999/xhtml":a}},la=null,oa={};
@@ -18338,19 +18342,19 @@ var react = __webpack_require__(3);
 var invariant = __webpack_require__(16);
 var ExecutionEnvironment = __webpack_require__(42);
 var _assign = __webpack_require__(11);
-var EventListener = __webpack_require__(56);
+var EventListener = __webpack_require__(57);
 var require$$0 = __webpack_require__(27);
 var hyphenateStyleName = __webpack_require__(113);
 var emptyFunction = __webpack_require__(12);
 var camelizeStyleName = __webpack_require__(115);
 var performanceNow = __webpack_require__(117);
-var propTypes = __webpack_require__(61);
+var propTypes = __webpack_require__(62);
 var emptyObject = __webpack_require__(26);
 var checkPropTypes = __webpack_require__(40);
-var shallowEqual = __webpack_require__(57);
-var containsNode = __webpack_require__(58);
-var focusNode = __webpack_require__(59);
-var getActiveElement = __webpack_require__(60);
+var shallowEqual = __webpack_require__(58);
+var containsNode = __webpack_require__(59);
+var focusNode = __webpack_require__(60);
+var getActiveElement = __webpack_require__(61);
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -36566,7 +36570,7 @@ exports = module.exports = __webpack_require__(13)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 
 // module
-exports.push([module.i, "#works---x_dqX {\n  width: 100vw;\n  background-color: #FFFFFF;\n  text-align: center;\n  padding: 11px;\n  box-sizing: border-box;\n  line-height: 2.5rem;\n  font-size: 1.5rem; }\n  #works---x_dqX h3 {\n    width: 100%;\n    padding: 10px;\n    box-sizing: border-box;\n    font-size: 18px;\n    line-height: 2rem; }\n  #works---x_dqX #works__search---35kBd .skill__button---3RG4a, #works---x_dqX #works__search---35kBd .skill__button__active---MTUYB {\n    font-size: 15px;\n    padding: 5px;\n    letter-spacing: 2px;\n    text-align: center;\n    display: inline-block;\n    margin: 0 10px;\n    transition: backgroundColor .4s,color .4s;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    cursor: pointer; }\n  #works---x_dqX #works__search---35kBd .skill__button---3RG4a {\n    color: #459bb5; }\n    #works---x_dqX #works__search---35kBd .skill__button__active---MTUYB {\n      color: white;\n      background-color: #459bb5; }\n  #works---x_dqX #works__search---35kBd #clear__filter---fKdia {\n    text-align: center;\n    text-transform: uppercase;\n    font-size: 14px;\n    padding: 10px;\n    margin: 10px auto;\n    width: 60px;\n    background-color: #459bb5;\n    color: #FFFFFF;\n    letter-spacing: 4px;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    cursor: pointer; }\n  #works---x_dqX #work_links---3Oz-l {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    width: 90%;\n    margin: 0 auto;\n    overflow: hidden;\n    font-family: \"Raleway\", sans-serif;\n    font-size: 15px;\n    list-style-type: none; }\n    #works---x_dqX #work_links---3Oz-l .work---28MN0 {\n      position: relative;\n      visibility: hidden;\n      outline: 1px solid transparent;\n      /* fix for jagged edges in FF on hover transition */ }\n      #works---x_dqX #work_links---3Oz-l .work---28MN0:after {\n        content: '';\n        display: block;\n        padding-bottom: 86.602%;\n        /* =  100 / tan(60) * 1.5 */ }\n      #works---x_dqX #work_links---3Oz-l .work---28MN0 img {\n        left: -100%;\n        right: -100%;\n        width: auto;\n        height: 100%;\n        margin: 0 auto;\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n        -webkit-filter: contrast(1.4);\n                filter: contrast(1.4); }\n      #works---x_dqX #work_links---3Oz-l .work---28MN0 h3,\n      #works---x_dqX #work_links---3Oz-l .work---28MN0 p {\n        width: 100%;\n        padding: 5%;\n        box-sizing: border-box;\n        background-color: #FFFFFF;\n        color: black;\n        transition: opacity 0.3s ease-out, -webkit-transform 0.2s ease-out;\n        transition: transform 0.2s ease-out, opacity 0.3s ease-out;\n        transition: transform 0.2s ease-out, opacity 0.3s ease-out, -webkit-transform 0.2s ease-out; }\n      #works---x_dqX #work_links---3Oz-l .work---28MN0 h3 {\n        bottom: 50%;\n        padding-top: 50%;\n        font-size: 1.5em;\n        z-index: 1;\n        -webkit-transform: translate3d(0, -100%, 0);\n                transform: translate3d(0, -100%, 0); }\n        #works---x_dqX #work_links---3Oz-l .work---28MN0 h3:after {\n          content: '';\n          position: absolute;\n          bottom: 0;\n          left: 45%;\n          width: 10%;\n          text-align: center;\n          border-bottom: 1px solid black; }\n      #works---x_dqX #work_links---3Oz-l .work---28MN0 p {\n        top: 50%;\n        padding-bottom: 50%;\n        -webkit-transform: translate3d(0, 100%, 0);\n                transform: translate3d(0, 100%, 0);\n        line-height: 1.2rem; }\n    #works---x_dqX #work_links---3Oz-l .work__in---1OqjA {\n      position: absolute;\n      width: 96%;\n      padding-bottom: 110.851%;\n      /* =  width / sin(60) */\n      margin: 0 2%;\n      overflow: hidden;\n      visibility: hidden;\n      outline: 1px solid transparent;\n      /* fix for jagged edges in FF on hover transition */\n      -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);\n              transform: rotate3d(0, 0, 1, -60deg) skewY(30deg); }\n      #works---x_dqX #work_links---3Oz-l .work__in---1OqjA * {\n        position: absolute;\n        visibility: visible;\n        outline: 1px solid transparent;\n        /* fix for jagged edges in FF on hover transition */ }\n    #works---x_dqX #work_links---3Oz-l .work__link---1vWYe {\n      display: block;\n      width: 100%;\n      height: 100%;\n      text-align: center;\n      color: #fff;\n      overflow: hidden;\n      -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);\n              transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg); }\n      #works---x_dqX #work_links---3Oz-l .work__link---1vWYe:focus h3,\n      #works---x_dqX #work_links---3Oz-l .work__link---1vWYe:focus p, #works---x_dqX #work_links---3Oz-l .work__link---1vWYe:hover h3,\n      #works---x_dqX #work_links---3Oz-l .work__link---1vWYe:hover p {\n        -webkit-transform: translate3d(0, 0, 0);\n                transform: translate3d(0, 0, 0); }\n  @media (max-width: 400px) {\n    #works---x_dqX #work_links---3Oz-l {\n      font-size: 13px; } }\n  @media (max-width: 600px) {\n    #works---x_dqX {\n      /* <- 2-1  hexagons per row */ }\n      #works---x_dqX #work_links---3Oz-l {\n        padding-bottom: 11.2%; }\n        #works---x_dqX #work_links---3Oz-l .work---28MN0 {\n          width: 50%; }\n          #works---x_dqX #work_links---3Oz-l .work---28MN0:nth-child(3n+3) {\n            /* first hexagon of even rows */\n            margin-left: 25%;\n            /* = width of .hex / 2  to indent even rows */ } }\n  @media (max-width: 900px) and (min-width: 601px) {\n    #works---x_dqX {\n      /* <- 3-2  hexagons per row */ }\n      #works---x_dqX #work_links---3Oz-l {\n        padding-bottom: 7.4%; }\n        #works---x_dqX #work_links---3Oz-l .work---28MN0 {\n          width: 33.33333%; }\n          #works---x_dqX #work_links---3Oz-l .work---28MN0:nth-child(5n+4) {\n            /* first hexagon of even rows */\n            margin-left: 16.66667%;\n            /* = width of .hex / 2  to indent even rows */ } }\n  @media (max-width: 1200px) and (min-width: 901px) {\n    #works---x_dqX {\n      /* <- 4-3  hexagons per row */ }\n      #works---x_dqX #work_links---3Oz-l {\n        padding-bottom: 5.5%; }\n        #works---x_dqX #work_links---3Oz-l .work---28MN0 {\n          width: 25%; }\n          #works---x_dqX #work_links---3Oz-l .work---28MN0:nth-child(7n+5) {\n            /* first hexagon of even rows */\n            margin-left: 12.5%;\n            /* = width of .hex / 2  to indent even rows */ } }\n  @media (min-width: 1201px) {\n    #works---x_dqX {\n      /* <- 5-4  hexagons per row */ }\n      #works---x_dqX #work_links---3Oz-l {\n        padding-bottom: 4.4%; }\n        #works---x_dqX #work_links---3Oz-l .work---28MN0 {\n          width: 20%; }\n          #works---x_dqX #work_links---3Oz-l .work---28MN0:nth-child(9n+6) {\n            /* first hexagon of even rows */\n            margin-left: 10%;\n            /* = width of .hex / 2  to indent even rows */ } }\n", ""]);
+exports.push([module.i, "#works---x_dqX {\n  width: 100vw;\n  background-color: #FFFFFF;\n  text-align: center;\n  padding: 11px;\n  box-sizing: border-box;\n  line-height: 2.5rem;\n  font-size: 1.5rem; }\n  #works---x_dqX h3 {\n    width: 100%;\n    padding: 10px;\n    box-sizing: border-box;\n    font-size: 18px;\n    line-height: 2rem; }\n  #works---x_dqX #works__search---35kBd .skill__button---3RG4a, #works---x_dqX #works__search---35kBd .skill__button__active---MTUYB {\n    font-size: 15px;\n    padding: 5px;\n    letter-spacing: 2px;\n    text-align: center;\n    display: inline-block;\n    margin: 0 10px;\n    transition: backgroundColor .4s,color .4s;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    cursor: pointer; }\n  #works---x_dqX #works__search---35kBd .skill__button---3RG4a {\n    color: #273043;\n    margin: 1px;\n    font-weight: 500; }\n    #works---x_dqX #works__search---35kBd .skill__button__active---MTUYB {\n      color: white;\n      background-color: #273043; }\n  #works---x_dqX #works__search---35kBd #clear__filter---fKdia {\n    text-align: center;\n    text-transform: uppercase;\n    font-size: 14px;\n    padding: 10px;\n    margin: 10px auto;\n    width: 60px;\n    background-color: #273043;\n    color: #FFFFFF;\n    letter-spacing: 4px;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    cursor: pointer; }\n  #works---x_dqX #work_links---3Oz-l {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    width: 90%;\n    margin: 0 auto;\n    overflow: hidden;\n    font-family: \"Raleway\", sans-serif;\n    font-size: 15px;\n    list-style-type: none; }\n    #works---x_dqX #work_links---3Oz-l .work---28MN0 {\n      position: relative;\n      visibility: hidden;\n      outline: 1px solid transparent;\n      /* fix for jagged edges in FF on hover transition */ }\n      #works---x_dqX #work_links---3Oz-l .work---28MN0:after {\n        content: '';\n        display: block;\n        padding-bottom: 86.602%;\n        /* =  100 / tan(60) * 1.5 */ }\n      #works---x_dqX #work_links---3Oz-l .work---28MN0 img {\n        left: -100%;\n        right: -100%;\n        width: auto;\n        height: 100%;\n        margin: 0 auto;\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n        -webkit-filter: contrast(1.4);\n                filter: contrast(1.4); }\n      #works---x_dqX #work_links---3Oz-l .work---28MN0 h3,\n      #works---x_dqX #work_links---3Oz-l .work---28MN0 p {\n        width: 100%;\n        padding: 5%;\n        box-sizing: border-box;\n        background-color: #FFFFFF;\n        color: #273043;\n        transition: opacity 0.3s ease-out, -webkit-transform 0.2s ease-out;\n        transition: transform 0.2s ease-out, opacity 0.3s ease-out;\n        transition: transform 0.2s ease-out, opacity 0.3s ease-out, -webkit-transform 0.2s ease-out; }\n      #works---x_dqX #work_links---3Oz-l .work---28MN0 h3 {\n        bottom: 50%;\n        padding-top: 50%;\n        font-size: 1.5em;\n        z-index: 1;\n        -webkit-transform: translate3d(0, -100%, 0);\n                transform: translate3d(0, -100%, 0); }\n        #works---x_dqX #work_links---3Oz-l .work---28MN0 h3:after {\n          content: '';\n          position: absolute;\n          bottom: 0;\n          left: 45%;\n          width: 10%;\n          text-align: center;\n          border-bottom: 1px solid #273043; }\n      #works---x_dqX #work_links---3Oz-l .work---28MN0 p {\n        top: 50%;\n        padding-bottom: 50%;\n        -webkit-transform: translate3d(0, 100%, 0);\n                transform: translate3d(0, 100%, 0);\n        line-height: 1.2rem; }\n    #works---x_dqX #work_links---3Oz-l .work__in---1OqjA {\n      position: absolute;\n      width: 96%;\n      padding-bottom: 110.851%;\n      /* =  width / sin(60) */\n      margin: 0 2%;\n      overflow: hidden;\n      visibility: hidden;\n      outline: 1px solid transparent;\n      /* fix for jagged edges in FF on hover transition */\n      -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);\n              transform: rotate3d(0, 0, 1, -60deg) skewY(30deg); }\n      #works---x_dqX #work_links---3Oz-l .work__in---1OqjA * {\n        position: absolute;\n        visibility: visible;\n        outline: 1px solid transparent;\n        /* fix for jagged edges in FF on hover transition */ }\n    #works---x_dqX #work_links---3Oz-l .work__link---1vWYe {\n      display: block;\n      width: 100%;\n      height: 100%;\n      text-align: center;\n      color: #fff;\n      overflow: hidden;\n      -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);\n              transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg); }\n      #works---x_dqX #work_links---3Oz-l .work__link---1vWYe:focus h3,\n      #works---x_dqX #work_links---3Oz-l .work__link---1vWYe:focus p, #works---x_dqX #work_links---3Oz-l .work__link---1vWYe:hover h3,\n      #works---x_dqX #work_links---3Oz-l .work__link---1vWYe:hover p {\n        -webkit-transform: translate3d(0, 0, 0);\n                transform: translate3d(0, 0, 0); }\n  @media (max-width: 400px) {\n    #works---x_dqX #work_links---3Oz-l {\n      font-size: 13px; } }\n  @media (max-width: 600px) {\n    #works---x_dqX {\n      /* <- 2-1  hexagons per row */ }\n      #works---x_dqX #work_links---3Oz-l {\n        padding-bottom: 11.2%; }\n        #works---x_dqX #work_links---3Oz-l .work---28MN0 {\n          width: 50%; }\n          #works---x_dqX #work_links---3Oz-l .work---28MN0:nth-child(3n+3) {\n            /* first hexagon of even rows */\n            margin-left: 25%;\n            /* = width of .hex / 2  to indent even rows */ } }\n  @media (max-width: 900px) and (min-width: 601px) {\n    #works---x_dqX {\n      /* <- 3-2  hexagons per row */ }\n      #works---x_dqX #work_links---3Oz-l {\n        padding-bottom: 7.4%; }\n        #works---x_dqX #work_links---3Oz-l .work---28MN0 {\n          width: 33.33333%; }\n          #works---x_dqX #work_links---3Oz-l .work---28MN0:nth-child(5n+4) {\n            /* first hexagon of even rows */\n            margin-left: 16.66667%;\n            /* = width of .hex / 2  to indent even rows */ } }\n  @media (max-width: 1200px) and (min-width: 901px) {\n    #works---x_dqX {\n      /* <- 4-3  hexagons per row */ }\n      #works---x_dqX #work_links---3Oz-l {\n        padding-bottom: 5.5%; }\n        #works---x_dqX #work_links---3Oz-l .work---28MN0 {\n          width: 25%; }\n          #works---x_dqX #work_links---3Oz-l .work---28MN0:nth-child(7n+5) {\n            /* first hexagon of even rows */\n            margin-left: 12.5%;\n            /* = width of .hex / 2  to indent even rows */ } }\n  @media (min-width: 1201px) {\n    #works---x_dqX {\n      /* <- 5-4  hexagons per row */ }\n      #works---x_dqX #work_links---3Oz-l {\n        padding-bottom: 4.4%; }\n        #works---x_dqX #work_links---3Oz-l .work---28MN0 {\n          width: 20%; }\n          #works---x_dqX #work_links---3Oz-l .work---28MN0:nth-child(9n+6) {\n            /* first hexagon of even rows */\n            margin-left: 10%;\n            /* = width of .hex / 2  to indent even rows */ } }\n", ""]);
 
 // exports
 exports.locals = {
@@ -36841,7 +36845,7 @@ exports = module.exports = __webpack_require__(13)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 
 // module
-exports.push([module.i, ".footer---1-SLt {\n  background-color: #FFFFFF;\n  width: 100vw;\n  font-size: 20px; }\n  .footer---1-SLt .copyrights---24Acq {\n    display: block;\n    text-align: center;\n    margin: 0 auto;\n    padding: 20px 0;\n    letter-spacing: 3px; }\n  .footer---1-SLt .credits---xPuh5 {\n    display: block;\n    text-align: center;\n    margin: 0 auto;\n    padding: 20px 0;\n    font-size: 10px; }\n    .footer---1-SLt .credits---xPuh5 a {\n      text-decoration: none;\n      color: black;\n      text-align: center; }\n", ""]);
+exports.push([module.i, ".footer---1-SLt {\n  background-color: #FFFFFF;\n  width: 100vw;\n  font-size: 20px;\n  box-sizing: border-box; }\n  .footer---1-SLt .copyrights---24Acq {\n    display: block;\n    text-align: center;\n    margin: 0 auto;\n    padding: 20px 0;\n    letter-spacing: 3px; }\n  .footer---1-SLt .credits---xPuh5 {\n    display: block;\n    text-align: center;\n    margin: 0 auto;\n    padding: 20px 0;\n    font-size: 10px; }\n    .footer---1-SLt .credits---xPuh5 a {\n      text-decoration: none;\n      color: #273043;\n      text-align: center; }\n", ""]);
 
 // exports
 exports.locals = {
@@ -36876,7 +36880,7 @@ var _mobileMenu = __webpack_require__(130);
 
 var _mobileMenu2 = _interopRequireDefault(_mobileMenu);
 
-var _logo = __webpack_require__(62);
+var _logo = __webpack_require__(63);
 
 var _logo2 = _interopRequireDefault(_logo);
 
@@ -36884,7 +36888,7 @@ var _header = __webpack_require__(135);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _reactScroll = __webpack_require__(63);
+var _reactScroll = __webpack_require__(43);
 
 var _reactScroll2 = _interopRequireDefault(_reactScroll);
 
@@ -37189,7 +37193,7 @@ exports = module.exports = __webpack_require__(13)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 
 // module
-exports.push([module.i, "._miedzyslowami_---3v301 {\n  content: ''; }\n\n#logo---OI0sG {\n  display: block;\n  margin: auto;\n  height: 2.5rem;\n  width: 13rem; }\n  #logo---OI0sG .text---22XA2 {\n    color: black;\n    font-size: 1rem;\n    display: inline-block;\n    -webkit-animation: text---22XA2 1s ease-in 3;\n            animation: text---22XA2 1s ease-in 3;\n    -webkit-transform: translatez(0);\n            transform: translatez(0);\n    margin-top: 1rem;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    cursor: pointer; }\n    #logo---OI0sG .text__1---ZDiGl {\n      width: 1rem;\n      text-align: center;\n      left: 0rem;\n      -webkit-animation-delay: 150ms;\n              animation-delay: 150ms; }\n      #logo---OI0sG .text__1---ZDiGl:after {\n        display: none;\n        content: m; }\n    #logo---OI0sG .text__2---1stOf {\n      width: 1rem;\n      text-align: center;\n      left: 4rem;\n      -webkit-animation-delay: 230ms;\n              animation-delay: 230ms; }\n      #logo---OI0sG .text__2---1stOf:after {\n        display: none;\n        content: i; }\n    #logo---OI0sG .text__3---f_NHK {\n      width: 1rem;\n      text-align: center;\n      left: 8rem;\n      -webkit-animation-delay: 310ms;\n              animation-delay: 310ms; }\n      #logo---OI0sG .text__3---f_NHK:after {\n        display: none;\n        content: e; }\n    #logo---OI0sG .text__4---2uTJA {\n      width: 1rem;\n      text-align: center;\n      left: 12rem;\n      -webkit-animation-delay: 390ms;\n              animation-delay: 390ms; }\n      #logo---OI0sG .text__4---2uTJA:after {\n        display: none;\n        content: d; }\n    #logo---OI0sG .text__5---3lym8 {\n      width: 1rem;\n      text-align: center;\n      left: 16rem;\n      -webkit-animation-delay: 470ms;\n              animation-delay: 470ms; }\n      #logo---OI0sG .text__5---3lym8:after {\n        display: none;\n        content: z; }\n    #logo---OI0sG .text__6---tU2BE {\n      width: 1rem;\n      text-align: center;\n      left: 20rem;\n      -webkit-animation-delay: 550ms;\n              animation-delay: 550ms; }\n      #logo---OI0sG .text__6---tU2BE:after {\n        display: none;\n        content: y; }\n    #logo---OI0sG .text__7---3N0FA {\n      width: 1rem;\n      text-align: center;\n      left: 24rem;\n      -webkit-animation-delay: 630ms;\n              animation-delay: 630ms; }\n      #logo---OI0sG .text__7---3N0FA:after {\n        display: none;\n        content: s; }\n    #logo---OI0sG .text__8---2OEMn {\n      width: 1rem;\n      text-align: center;\n      left: 28rem;\n      -webkit-animation-delay: 710ms;\n              animation-delay: 710ms; }\n      #logo---OI0sG .text__8---2OEMn:after {\n        display: none;\n        content: l; }\n    #logo---OI0sG .text__9---3x03S {\n      width: 1rem;\n      text-align: center;\n      left: 32rem;\n      -webkit-animation-delay: 790ms;\n              animation-delay: 790ms; }\n      #logo---OI0sG .text__9---3x03S:after {\n        display: none;\n        content: o; }\n    #logo---OI0sG .text__10---3MY8p {\n      width: 1rem;\n      text-align: center;\n      left: 36rem;\n      -webkit-animation-delay: 870ms;\n              animation-delay: 870ms; }\n      #logo---OI0sG .text__10---3MY8p:after {\n        display: none;\n        content: w; }\n    #logo---OI0sG .text__11---VkxXM {\n      width: 1rem;\n      text-align: center;\n      left: 40rem;\n      -webkit-animation-delay: 950ms;\n              animation-delay: 950ms; }\n      #logo---OI0sG .text__11---VkxXM:after {\n        display: none;\n        content: a; }\n    #logo---OI0sG .text__12---Tb1oD {\n      width: 1rem;\n      text-align: center;\n      left: 44rem;\n      -webkit-animation-delay: 1030ms;\n              animation-delay: 1030ms; }\n      #logo---OI0sG .text__12---Tb1oD:after {\n        display: none;\n        content: m; }\n    #logo---OI0sG .text__13---3SSRk {\n      width: 1rem;\n      text-align: center;\n      left: 48rem;\n      -webkit-animation-delay: 1110ms;\n              animation-delay: 1110ms; }\n      #logo---OI0sG .text__13---3SSRk:after {\n        display: none;\n        content: i; }\n\n@-webkit-keyframes text---22XA2 {\n  0% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n  30% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n  45% {\n    -webkit-transform: translate3d(0, -2rem, 0);\n            transform: translate3d(0, -2rem, 0); }\n  100% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); } }\n\n@keyframes text---22XA2 {\n  0% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n  30% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n  45% {\n    -webkit-transform: translate3d(0, -2rem, 0);\n            transform: translate3d(0, -2rem, 0); }\n  100% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); } }\n", ""]);
+exports.push([module.i, "._miedzyslowami_---3v301 {\n  content: ''; }\n\n#logo---OI0sG {\n  display: block;\n  margin: auto;\n  height: 2.5rem;\n  width: 13rem; }\n  #logo---OI0sG .text---22XA2 {\n    color: #273043;\n    font-size: 1rem;\n    display: inline-block;\n    -webkit-animation: text---22XA2 1s ease-in 3;\n            animation: text---22XA2 1s ease-in 3;\n    -webkit-transform: translatez(0);\n            transform: translatez(0);\n    margin-top: 1rem;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    cursor: pointer; }\n    #logo---OI0sG .text__1---ZDiGl {\n      width: 1rem;\n      text-align: center;\n      left: 0rem;\n      -webkit-animation-delay: 150ms;\n              animation-delay: 150ms; }\n      #logo---OI0sG .text__1---ZDiGl:after {\n        display: none;\n        content: m; }\n    #logo---OI0sG .text__2---1stOf {\n      width: 1rem;\n      text-align: center;\n      left: 4rem;\n      -webkit-animation-delay: 230ms;\n              animation-delay: 230ms; }\n      #logo---OI0sG .text__2---1stOf:after {\n        display: none;\n        content: i; }\n    #logo---OI0sG .text__3---f_NHK {\n      width: 1rem;\n      text-align: center;\n      left: 8rem;\n      -webkit-animation-delay: 310ms;\n              animation-delay: 310ms; }\n      #logo---OI0sG .text__3---f_NHK:after {\n        display: none;\n        content: e; }\n    #logo---OI0sG .text__4---2uTJA {\n      width: 1rem;\n      text-align: center;\n      left: 12rem;\n      -webkit-animation-delay: 390ms;\n              animation-delay: 390ms; }\n      #logo---OI0sG .text__4---2uTJA:after {\n        display: none;\n        content: d; }\n    #logo---OI0sG .text__5---3lym8 {\n      width: 1rem;\n      text-align: center;\n      left: 16rem;\n      -webkit-animation-delay: 470ms;\n              animation-delay: 470ms; }\n      #logo---OI0sG .text__5---3lym8:after {\n        display: none;\n        content: z; }\n    #logo---OI0sG .text__6---tU2BE {\n      width: 1rem;\n      text-align: center;\n      left: 20rem;\n      -webkit-animation-delay: 550ms;\n              animation-delay: 550ms; }\n      #logo---OI0sG .text__6---tU2BE:after {\n        display: none;\n        content: y; }\n    #logo---OI0sG .text__7---3N0FA {\n      width: 1rem;\n      text-align: center;\n      left: 24rem;\n      -webkit-animation-delay: 630ms;\n              animation-delay: 630ms; }\n      #logo---OI0sG .text__7---3N0FA:after {\n        display: none;\n        content: s; }\n    #logo---OI0sG .text__8---2OEMn {\n      width: 1rem;\n      text-align: center;\n      left: 28rem;\n      -webkit-animation-delay: 710ms;\n              animation-delay: 710ms; }\n      #logo---OI0sG .text__8---2OEMn:after {\n        display: none;\n        content: l; }\n    #logo---OI0sG .text__9---3x03S {\n      width: 1rem;\n      text-align: center;\n      left: 32rem;\n      -webkit-animation-delay: 790ms;\n              animation-delay: 790ms; }\n      #logo---OI0sG .text__9---3x03S:after {\n        display: none;\n        content: o; }\n    #logo---OI0sG .text__10---3MY8p {\n      width: 1rem;\n      text-align: center;\n      left: 36rem;\n      -webkit-animation-delay: 870ms;\n              animation-delay: 870ms; }\n      #logo---OI0sG .text__10---3MY8p:after {\n        display: none;\n        content: w; }\n    #logo---OI0sG .text__11---VkxXM {\n      width: 1rem;\n      text-align: center;\n      left: 40rem;\n      -webkit-animation-delay: 950ms;\n              animation-delay: 950ms; }\n      #logo---OI0sG .text__11---VkxXM:after {\n        display: none;\n        content: a; }\n    #logo---OI0sG .text__12---Tb1oD {\n      width: 1rem;\n      text-align: center;\n      left: 44rem;\n      -webkit-animation-delay: 1030ms;\n              animation-delay: 1030ms; }\n      #logo---OI0sG .text__12---Tb1oD:after {\n        display: none;\n        content: m; }\n    #logo---OI0sG .text__13---3SSRk {\n      width: 1rem;\n      text-align: center;\n      left: 48rem;\n      -webkit-animation-delay: 1110ms;\n              animation-delay: 1110ms; }\n      #logo---OI0sG .text__13---3SSRk:after {\n        display: none;\n        content: i; }\n\n@-webkit-keyframes text---22XA2 {\n  0% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n  30% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n  45% {\n    -webkit-transform: translate3d(0, -2rem, 0);\n            transform: translate3d(0, -2rem, 0); }\n  100% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); } }\n\n@keyframes text---22XA2 {\n  0% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n  30% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }\n  45% {\n    -webkit-transform: translate3d(0, -2rem, 0);\n            transform: translate3d(0, -2rem, 0); }\n  100% {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); } }\n", ""]);
 
 // exports
 exports.locals = {
@@ -37251,7 +37255,7 @@ exports = module.exports = __webpack_require__(13)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 
 // module
-exports.push([module.i, ".header---1HG90 {\n  background-color: #FFFFFF;\n  font-size: 20px;\n  width: 100vw;\n  padding: 20px 10px;\n  box-sizing: border-box; }\n  .header---1HG90 .main__heading---3Cssh {\n    text-indent: -100%;\n    visibility: none;\n    height: 0;\n    width: 0; }\n  .header---1HG90 .wrapper---a3p_u {\n    width: 100%;\n    max-width: 1200px;\n    margin: 0 auto; }\n    .header---1HG90 .wrapper---a3p_u #logo---3xMpx {\n      display: block;\n      width: 100%;\n      text-align: center; }\n    .header---1HG90 .wrapper---a3p_u #mobile__menu---1nfS1 {\n      display: block;\n      width: 100%;\n      -webkit-user-select: none;\n         -moz-user-select: none;\n          -ms-user-select: none;\n              user-select: none;\n      cursor: pointer; }\n    .header---1HG90 .wrapper---a3p_u #navigation---2oLrY {\n      height: 0;\n      visibility: hidden;\n      opacity: 0;\n      -webkit-transform: translateY(-2em);\n              transform: translateY(-2em);\n      z-index: -1;\n      transition: all 0.3s ease-in-out 0s,height 0.5s linear 0.1s,visibility 0s linear 0.3s, z-index 0s linear 0.01s; }\n      .header---1HG90 .wrapper---a3p_u #navigation---2oLrY li {\n        text-align: center;\n        padding: 20px;\n        text-transform: lowercase;\n        letter-spacing: 3px;\n        -webkit-user-select: none;\n           -moz-user-select: none;\n            -ms-user-select: none;\n                user-select: none;\n        cursor: pointer; }\n        .header---1HG90 .wrapper---a3p_u #navigation---2oLrY li:after {\n          display: block;\n          content: '';\n          border-bottom: solid 3px black;\n          -webkit-transform: scaleX(0);\n                  transform: scaleX(0);\n          transition: -webkit-transform 250ms ease-in-out;\n          transition: transform 250ms ease-in-out;\n          transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;\n          -webkit-transform-origin: 0% 50%;\n                  transform-origin: 0% 50%; }\n        .header---1HG90 .wrapper---a3p_u #navigation---2oLrY li:hover:after {\n          -webkit-transform: scaleX(1);\n                  transform: scaleX(1); }\n      .header---1HG90 .wrapper---a3p_u #navigation---2oLrY.show__menu---3BAXo {\n        height: 220px;\n        visibility: visible;\n        /* shows sub-menu */\n        opacity: 1;\n        z-index: 1;\n        -webkit-transform: translateY(0%);\n                transform: translateY(0%);\n        transition-delay: 0s,0s, 0s, 0.3s,0.01s; }\n", ""]);
+exports.push([module.i, ".header---1HG90 {\n  background-color: #FFFFFF;\n  font-size: 20px;\n  width: 100vw;\n  padding: 20px 10px;\n  box-sizing: border-box; }\n  .header---1HG90 .main__heading---3Cssh {\n    text-indent: -100%;\n    visibility: none;\n    height: 0;\n    width: 0; }\n  .header---1HG90 .wrapper---a3p_u {\n    width: 100%;\n    max-width: 1200px;\n    margin: 0 auto; }\n    .header---1HG90 .wrapper---a3p_u #logo---3xMpx {\n      display: block;\n      width: 100%;\n      text-align: center; }\n    .header---1HG90 .wrapper---a3p_u #mobile__menu---1nfS1 {\n      display: block;\n      width: 100%;\n      -webkit-user-select: none;\n         -moz-user-select: none;\n          -ms-user-select: none;\n              user-select: none;\n      cursor: pointer; }\n    .header---1HG90 .wrapper---a3p_u #navigation---2oLrY {\n      height: 0;\n      visibility: hidden;\n      opacity: 0;\n      -webkit-transform: translateY(-2em);\n              transform: translateY(-2em);\n      z-index: -1;\n      transition: all 0.3s ease-in-out 0s,height 0.5s linear 0.1s,visibility 0s linear 0.3s, z-index 0s linear 0.01s; }\n      .header---1HG90 .wrapper---a3p_u #navigation---2oLrY li {\n        text-align: center;\n        padding: 20px;\n        text-transform: lowercase;\n        letter-spacing: 3px;\n        -webkit-user-select: none;\n           -moz-user-select: none;\n            -ms-user-select: none;\n                user-select: none;\n        list-style: none;\n        cursor: pointer;\n        max-width: 320px;\n        margin: 0 auto; }\n        .header---1HG90 .wrapper---a3p_u #navigation---2oLrY li:after {\n          display: block;\n          content: '';\n          border-bottom: 2px solid pink;\n          -webkit-transform: scaleX(0);\n                  transform: scaleX(0);\n          transition: -webkit-transform 250ms ease-in-out;\n          transition: transform 250ms ease-in-out;\n          transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;\n          -webkit-transform-origin: 0% 50%;\n                  transform-origin: 0% 50%; }\n        .header---1HG90 .wrapper---a3p_u #navigation---2oLrY li:hover:after {\n          -webkit-transform: scaleX(1);\n                  transform: scaleX(1); }\n      .header---1HG90 .wrapper---a3p_u #navigation---2oLrY.show__menu---3BAXo {\n        height: 220px;\n        visibility: visible;\n        /* shows sub-menu */\n        opacity: 1;\n        z-index: 1;\n        -webkit-transform: translateY(0%);\n                transform: translateY(0%);\n        transition-delay: 0s,0s, 0s, 0.3s,0.01s; }\n", ""]);
 
 // exports
 exports.locals = {
@@ -37390,7 +37394,7 @@ module.exports = {
 "use strict";
 
 
-var _require = __webpack_require__(43),
+var _require = __webpack_require__(44),
     addPassiveEventListener = _require.addPassiveEventListener,
     removePassiveEventListener = _require.removePassiveEventListener;
 
@@ -37411,7 +37415,7 @@ module.exports = {
 "use strict";
 
 
-var addPassiveEventListener = __webpack_require__(43);
+var addPassiveEventListener = __webpack_require__(44);
 var utils = __webpack_require__(29);
 
 var scrollHash = {
@@ -37603,7 +37607,7 @@ var _reactDom = __webpack_require__(9);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactScroll = __webpack_require__(63);
+var _reactScroll = __webpack_require__(43);
 
 var _reactScroll2 = _interopRequireDefault(_reactScroll);
 
@@ -37674,7 +37678,7 @@ var About = exports.About = function (_React$Component) {
                     _react2.default.createElement(
                         'p',
                         null,
-                        'I\'m Gosia and I am React\'s enthusiast.'
+                        'I\'m Gosia and I am React\'s enthusiast, but not only.'
                     ),
                     _react2.default.createElement(
                         'p',
@@ -37749,7 +37753,7 @@ exports = module.exports = __webpack_require__(13)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 
 // module
-exports.push([module.i, "#about---1vYsp {\n  width: 100vw;\n  background-color: #FFFFFF;\n  text-align: center;\n  padding: 11px;\n  box-sizing: border-box;\n  line-height: 2.5rem;\n  font-size: 1.5rem; }\n  #about---1vYsp img {\n    width: 100%; }\n  #about---1vYsp .info---1aOYQ {\n    display: inline-block;\n    margin: 0 auto; }\n    #about---1vYsp .info---1aOYQ a {\n      text-decoration: none;\n      color: #459bb5; }\n    #about---1vYsp .info---1aOYQ .contact___link---1kuJR {\n      color: #459bb5; }\n", ""]);
+exports.push([module.i, "#about---1vYsp {\n  width: 100vw;\n  background-color: #FFFFFF;\n  text-align: center;\n  padding: 11px;\n  box-sizing: border-box;\n  line-height: 2.5rem;\n  font-size: 1.5rem; }\n  #about---1vYsp img {\n    width: 100%;\n    max-width: 955px;\n    margin: 0 auto; }\n  #about---1vYsp .info---1aOYQ {\n    display: inline-block;\n    margin: 0 auto;\n    font-size: 1.3rem; }\n    #about---1vYsp .info---1aOYQ .contact___link---1kuJR, #about---1vYsp .info---1aOYQ a {\n      color: #4e5d5b;\n      display: inline-block;\n      text-decoration: underline; }\n", ""]);
 
 // exports
 exports.locals = {
@@ -37785,6 +37789,10 @@ var _config = __webpack_require__(147);
 var _contact = __webpack_require__(231);
 
 var _contact2 = _interopRequireDefault(_contact);
+
+var _socialIcons = __webpack_require__(235);
+
+var _socialIcons2 = _interopRequireDefault(_socialIcons);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37925,7 +37933,8 @@ var Contact = exports.Contact = function (_React$Component) {
                         )
                     ),
                     _react2.default.createElement('input', { id: _contact2.default.submit__button, type: 'submit', value: 'send' })
-                )
+                ),
+                _react2.default.createElement(_socialIcons2.default, null)
             );
         }
     }]);
@@ -38085,7 +38094,7 @@ if (typeof Promise === 'undefined') {
 
 //# sourceMappingURL=promise.js.map
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(45)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(46)))
 
 /***/ }),
 /* 152 */
@@ -38577,7 +38586,7 @@ exports.clearImmediate = clearImmediate;
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(45), __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(46), __webpack_require__(5)))
 
 /***/ }),
 /* 155 */
@@ -39250,7 +39259,7 @@ exports.Deferred = Deferred;
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var constants_1 = __webpack_require__(46);
+var constants_1 = __webpack_require__(47);
 /**
  * Returns navigator.userAgent string or '' if it's not defined.
  * @return {string} user agent string
@@ -40724,7 +40733,7 @@ Z(Og,"credential",Qg,[V("verificationId"),V("verificationCode")]);Y(Og.prototype
 (function(){if("undefined"!==typeof firebase&&firebase.INTERNAL&&firebase.INTERNAL.registerService){var a={Auth:T,Error:O};Z(a,"EmailAuthProvider",Jg,[]);Z(a,"FacebookAuthProvider",yg,[]);Z(a,"GithubAuthProvider",Ag,[]);Z(a,"GoogleAuthProvider",Cg,[]);Z(a,"TwitterAuthProvider",Eg,[]);Z(a,"OAuthProvider",P,[V("providerId")]);Z(a,"PhoneAuthProvider",Og,[al()]);Z(a,"RecaptchaVerifier",li,[X(V(),$k(),"recaptchaContainer"),W("recaptchaParameters",!0),bl()]);firebase.INTERNAL.registerService("auth",function(a,
 c){a=new T(a);c({INTERNAL:{getUid:r(a.getUid,a),getToken:r(a.If,a),addAuthTokenListener:r(a.pf,a),removeAuthTokenListener:r(a.jg,a)}});return a},a,function(a,c){if("create"===a)try{c.auth()}catch(d){}});firebase.INTERNAL.extendNamespace({User:S})}else throw Error("Cannot find the firebase namespace; be sure to include firebase-app.js before this library.");})();}).call(this);
 }).call(typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {});
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(45)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(46)))
 
 /***/ }),
 /* 171 */
@@ -40774,9 +40783,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var app_1 = __webpack_require__(15);
 var Database_1 = __webpack_require__(71);
 var Query_1 = __webpack_require__(74);
-var Reference_1 = __webpack_require__(47);
+var Reference_1 = __webpack_require__(48);
 var util_1 = __webpack_require__(1);
-var RepoManager_1 = __webpack_require__(51);
+var RepoManager_1 = __webpack_require__(52);
 var INTERNAL = __webpack_require__(205);
 var TEST_ACCESS = __webpack_require__(206);
 var util_2 = __webpack_require__(0);
@@ -41573,7 +41582,7 @@ var util_2 = __webpack_require__(1);
 var AckUserWrite_1 = __webpack_require__(181);
 var ChildrenNode_1 = __webpack_require__(6);
 var util_3 = __webpack_require__(0);
-var ImmutableTree_1 = __webpack_require__(48);
+var ImmutableTree_1 = __webpack_require__(49);
 var ListenComplete_1 = __webpack_require__(182);
 var Merge_1 = __webpack_require__(183);
 var Operation_1 = __webpack_require__(18);
@@ -42494,7 +42503,7 @@ exports.Merge = Merge;
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var IndexedFilter_1 = __webpack_require__(49);
+var IndexedFilter_1 = __webpack_require__(50);
 var ViewProcessor_1 = __webpack_require__(185);
 var ChildrenNode_1 = __webpack_require__(6);
 var CacheNode_1 = __webpack_require__(36);
@@ -42715,7 +42724,7 @@ var ChildChangeAccumulator_1 = __webpack_require__(186);
 var Change_1 = __webpack_require__(20);
 var ChildrenNode_1 = __webpack_require__(6);
 var KeyIndex_1 = __webpack_require__(22);
-var ImmutableTree_1 = __webpack_require__(48);
+var ImmutableTree_1 = __webpack_require__(49);
 var Path_1 = __webpack_require__(2);
 var CompleteChildSource_1 = __webpack_require__(187);
 /**
@@ -44286,7 +44295,7 @@ exports.WriteTreeRef = WriteTreeRef;
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var ImmutableTree_1 = __webpack_require__(48);
+var ImmutableTree_1 = __webpack_require__(49);
 var Path_1 = __webpack_require__(2);
 var util_1 = __webpack_require__(0);
 var Node_1 = __webpack_require__(7);
@@ -45544,7 +45553,7 @@ var KeyIndex_1 = __webpack_require__(22);
 var PriorityIndex_1 = __webpack_require__(4);
 var ValueIndex_1 = __webpack_require__(76);
 var PathIndex_1 = __webpack_require__(80);
-var IndexedFilter_1 = __webpack_require__(49);
+var IndexedFilter_1 = __webpack_require__(50);
 var LimitedFilter_1 = __webpack_require__(202);
 var RangedFilter_1 = __webpack_require__(95);
 var util_3 = __webpack_require__(0);
@@ -46218,7 +46227,7 @@ exports.LimitedFilter = LimitedFilter;
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(0);
-var Reference_1 = __webpack_require__(47);
+var Reference_1 = __webpack_require__(48);
 var DataSnapshot_1 = __webpack_require__(81);
 var Path_1 = __webpack_require__(2);
 var Tree_1 = __webpack_require__(204);
@@ -47086,7 +47095,7 @@ exports.interceptServerData = function (ref, callback) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var RepoInfo_1 = __webpack_require__(73);
 var PersistentConnection_1 = __webpack_require__(89);
-var RepoManager_1 = __webpack_require__(51);
+var RepoManager_1 = __webpack_require__(52);
 var Connection_1 = __webpack_require__(91);
 exports.DataConnection = PersistentConnection_1.PersistentConnection;
 /**
@@ -48777,8 +48786,8 @@ var RequestInfo = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__implementation_taskenums__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__implementation_observer__ = __webpack_require__(222);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tasksnapshot__ = __webpack_require__(223);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__implementation_args__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__implementation_array__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__implementation_args__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__implementation_array__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__implementation_async__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__implementation_error__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__implementation_promise_external__ = __webpack_require__(19);
@@ -49491,7 +49500,7 @@ function async(f) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Service; });
 /* unused harmony export ServiceInternals */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__implementation_args__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__implementation_args__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__implementation_authwrapper__ = __webpack_require__(226);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__implementation_location__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__implementation_promise_external__ = __webpack_require__(19);
@@ -49889,13 +49898,13 @@ var RequestMap = /** @class */ (function () {
 /* unused harmony export addVersionHeader_ */
 /* harmony export (immutable) */ __webpack_exports__["a"] = makeRequest;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_app__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__array__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__array__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backoff__ = __webpack_require__(230);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__error__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__object__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__promise_external__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__type__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__url__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__url__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__xhrio__ = __webpack_require__(100);
 /**
  * Copyright 2017 Google Inc.
@@ -50285,7 +50294,7 @@ exports = module.exports = __webpack_require__(13)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 
 // module
-exports.push([module.i, "#contact---2tTdg {\n  background-color: #FFFFFF;\n  font-size: 20px;\n  width: 100vw;\n  padding: 20px 10px;\n  box-sizing: border-box;\n  text-align: center; }\n  #contact---2tTdg div {\n    margin: 0 auto; }\n  #contact---2tTdg label {\n    transition: all .3s linear;\n    letter-spacing: 2px;\n    color: black; }\n  #contact---2tTdg #contact__form---3jq5V {\n    width: 100%;\n    max-width: 1200px;\n    margin: -30px auto 0; }\n    #contact---2tTdg #contact__form---3jq5V * {\n      display: block;\n      box-sizing: border-box;\n      max-width: 765px;\n      width: 100%;\n      margin-top: 15px; }\n    #contact---2tTdg #contact__form---3jq5V input {\n      margin: 10px auto 0;\n      padding: 15px 0 15px 45px;\n      box-sizing: border-box;\n      background-color: #459bb5;\n      font-size: 1rem;\n      outline: none; }\n      #contact---2tTdg #contact__form---3jq5V input:focus {\n        background-color: grey; }\n    #contact---2tTdg #contact__form---3jq5V textarea {\n      outline: none; }\n    #contact---2tTdg #contact__form---3jq5V i {\n      margin: 0;\n      width: 24px;\n      padding-left: 11px;\n      -webkit-transform: translateY(208%);\n              transform: translateY(208%);\n      color: black; }\n    #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 {\n      height: 78px; }\n      #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .label__name---3TckC {\n        -webkit-transform: translateY(-212%);\n                transform: translateY(-212%); }\n      #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .input__name---r_lW5:focus + .label__name---3TckC, #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .input__name---r_lW5:valid + .label__name---3TckC {\n        -webkit-transform: translateY(-405%);\n                transform: translateY(-405%); }\n      #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .input__name---r_lW5:focus + .label__name---3TckC, #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .input__name---r_lW5:valid + .label__name---3TckC {\n        -webkit-transform: translateY(-405%);\n                transform: translateY(-405%); }\n    #contact---2tTdg #contact__form---3jq5V #email---2jegp {\n      height: 78px; }\n      #contact---2tTdg #contact__form---3jq5V #email---2jegp .label__email---31E31 {\n        -webkit-transform: translateY(-220%);\n                transform: translateY(-220%); }\n      #contact---2tTdg #contact__form---3jq5V #email---2jegp .input__email---3VMv9:focus + .label__email---31E31, #contact---2tTdg #contact__form---3jq5V #email---2jegp .input__email---3VMv9:valid + .label__email---31E31 {\n        -webkit-transform: translateY(-415%);\n                transform: translateY(-415%); }\n    #contact---2tTdg #contact__form---3jq5V #message---1iGxy {\n      height: 190px; }\n      #contact---2tTdg #contact__form---3jq5V #message---1iGxy .label__textarea---1WFED {\n        -webkit-transform: translateY(-670%);\n                transform: translateY(-670%); }\n      #contact---2tTdg #contact__form---3jq5V #message---1iGxy .message---1iGxy {\n        padding: 15px 0 0 45px;\n        height: 150px;\n        font-size: 1rem;\n        background-color: #459bb5; }\n        #contact---2tTdg #contact__form---3jq5V #message---1iGxy .message---1iGxy:focus {\n          background-color: grey; }\n        #contact---2tTdg #contact__form---3jq5V #message---1iGxy .message---1iGxy:focus + .label__textarea---1WFED, #contact---2tTdg #contact__form---3jq5V #message---1iGxy .message---1iGxy:valid + .label__textarea---1WFED {\n          -webkit-transform: translateY(-829%);\n                  transform: translateY(-829%); }\n    #contact---2tTdg #contact__form---3jq5V #submit__button---1-rf8 {\n      text-transform: uppercase;\n      font-size: 1.5rem;\n      border-radius: 50%;\n      width: auto;\n      text-align: center;\n      width: 100px;\n      height: 100px;\n      padding: 0;\n      border: 2px solid black;\n      background-color: transparent;\n      letter-spacing: 5px; }\n", ""]);
+exports.push([module.i, "#contact---2tTdg {\n  background-color: #FFFFFF;\n  font-size: 20px;\n  width: 100vw;\n  padding: 20px 10px;\n  box-sizing: border-box;\n  text-align: center; }\n  #contact---2tTdg div {\n    margin: 0 auto; }\n  #contact---2tTdg label {\n    transition: all .3s linear;\n    letter-spacing: 2px;\n    color: #273043; }\n  #contact---2tTdg #contact__form---3jq5V {\n    width: 100%;\n    max-width: 1200px;\n    margin: -30px auto 0; }\n    #contact---2tTdg #contact__form---3jq5V * {\n      display: block;\n      box-sizing: border-box;\n      max-width: 765px;\n      width: 100%;\n      margin-top: 15px; }\n    #contact---2tTdg #contact__form---3jq5V input {\n      margin: 10px auto 0;\n      padding: 15px 0 15px 45px;\n      box-sizing: border-box;\n      background-color: #A7BAB8;\n      font-size: 1rem;\n      outline: none; }\n      #contact---2tTdg #contact__form---3jq5V input:focus {\n        background-color: pink; }\n    #contact---2tTdg #contact__form---3jq5V textarea {\n      outline: none; }\n    #contact---2tTdg #contact__form---3jq5V i {\n      margin: 0;\n      width: 24px;\n      padding-left: 11px;\n      -webkit-transform: translateY(208%);\n              transform: translateY(208%);\n      color: #273043; }\n    #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 {\n      height: 78px; }\n      #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .label__name---3TckC {\n        -webkit-transform: translateY(-212%);\n                transform: translateY(-212%); }\n      #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .input__name---r_lW5:focus + .label__name---3TckC, #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .input__name---r_lW5:valid + .label__name---3TckC {\n        -webkit-transform: translateY(-405%);\n                transform: translateY(-405%); }\n      #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .input__name---r_lW5:focus + .label__name---3TckC, #contact---2tTdg #contact__form---3jq5V #name---1_DJ2 .input__name---r_lW5:valid + .label__name---3TckC {\n        -webkit-transform: translateY(-405%);\n                transform: translateY(-405%); }\n    #contact---2tTdg #contact__form---3jq5V #email---2jegp {\n      height: 78px; }\n      #contact---2tTdg #contact__form---3jq5V #email---2jegp .label__email---31E31 {\n        -webkit-transform: translateY(-220%);\n                transform: translateY(-220%); }\n      #contact---2tTdg #contact__form---3jq5V #email---2jegp .input__email---3VMv9:focus + .label__email---31E31, #contact---2tTdg #contact__form---3jq5V #email---2jegp .input__email---3VMv9:valid + .label__email---31E31 {\n        -webkit-transform: translateY(-415%);\n                transform: translateY(-415%); }\n    #contact---2tTdg #contact__form---3jq5V #message---1iGxy {\n      height: 190px; }\n      #contact---2tTdg #contact__form---3jq5V #message---1iGxy .label__textarea---1WFED {\n        -webkit-transform: translateY(-670%);\n                transform: translateY(-670%); }\n      #contact---2tTdg #contact__form---3jq5V #message---1iGxy .message---1iGxy {\n        padding: 15px 0 0 45px;\n        height: 150px;\n        font-size: 1rem;\n        background-color: #A7BAB8; }\n        #contact---2tTdg #contact__form---3jq5V #message---1iGxy .message---1iGxy:focus {\n          background-color: pink; }\n        #contact---2tTdg #contact__form---3jq5V #message---1iGxy .message---1iGxy:focus + .label__textarea---1WFED, #contact---2tTdg #contact__form---3jq5V #message---1iGxy .message---1iGxy:valid + .label__textarea---1WFED {\n          -webkit-transform: translateY(-829%);\n                  transform: translateY(-829%); }\n    #contact---2tTdg #contact__form---3jq5V #submit__button---1-rf8 {\n      text-transform: uppercase;\n      font-size: 1.5rem;\n      border-radius: 50%;\n      width: auto;\n      text-align: center;\n      width: 100px;\n      height: 100px;\n      padding: 0;\n      border: 1px solid black;\n      background-color: transparent;\n      letter-spacing: 5px; }\n", ""]);
 
 // exports
 exports.locals = {
@@ -50342,10 +50351,177 @@ exports = module.exports = __webpack_require__(13)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
 
 // module
-exports.push([module.i, "*, body {\n  margin: 0;\n  padding: 0;\n  border: none;\n  font-weight: 100; }\n\nbody {\n  background-color: white;\n  font-weight: bold;\n  font-family: 'Raleway', sans-serif;\n  font-size: 30px; }\n\nhr {\n  width: 80%;\n  margin: 0 auto;\n  height: 1px;\n  background-color: grey; }\n\nh2 {\n  text-transform: uppercase;\n  letter-spacing: 3px;\n  padding: 25px 0;\n  font-weight: 100;\n  line-height: 3rem;\n  margin: 0 auto; }\n", ""]);
+exports.push([module.i, "*, body {\n  margin: 0;\n  padding: 0;\n  border: none;\n  font-weight: 100; }\n\nbody {\n  background-color: white;\n  font-weight: bold;\n  font-family: 'Raleway', sans-serif;\n  font-size: 30px;\n  box-sizing: border-box; }\n\nhr {\n  width: 80%;\n  margin: 0 auto;\n  height: 1px;\n  background-color: #A7BAB8; }\n\nh2 {\n  text-transform: uppercase;\n  letter-spacing: 3px;\n  padding: 25px 0;\n  font-weight: 100;\n  line-height: 3rem;\n  margin: 0 auto; }\n", ""]);
 
 // exports
 
+
+/***/ }),
+/* 235 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.SocialIcons = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(9);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _socialIcons = __webpack_require__(236);
+
+var _socialIcons2 = _interopRequireDefault(_socialIcons);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SocialIcons = exports.SocialIcons = function (_React$Component) {
+    _inherits(SocialIcons, _React$Component);
+
+    function SocialIcons(props) {
+        _classCallCheck(this, SocialIcons);
+
+        var _this = _possibleConstructorReturn(this, (SocialIcons.__proto__ || Object.getPrototypeOf(SocialIcons)).call(this, props));
+
+        _this.handleClick = function (e) {
+            _this.state.rotate === false ? _this.setState({ className: _socialIcons2.default.rotate__icon, rotate: true }) : _this.setState({ className: _socialIcons2.default.unrotate__icon, rotate: false });
+            _this.props.handleClick();
+        };
+
+        return _this;
+    }
+
+    _createClass(SocialIcons, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { id: _socialIcons2.default.social__links },
+                _react2.default.createElement(
+                    'a',
+                    { href: 'https://github.com/miedzyslowami', target: '_blank', className: _socialIcons2.default.social__link },
+                    _react2.default.createElement(
+                        'svg',
+                        { id: _socialIcons2.default.github, xmlns: 'http://www.w3.org/2000/svg', x: '0px', y: '0px', viewBox: '0 0 488.979 488.979', role: 'img', 'aria-labelledby': 'title desc' },
+                        _react2.default.createElement(
+                            'title',
+                            { id: 'title' },
+                            'Github icon'
+                        ),
+                        _react2.default.createElement(
+                            'desc',
+                            { id: 'desc' },
+                            'Github link'
+                        ),
+                        _react2.default.createElement(
+                            'g',
+                            null,
+                            _react2.default.createElement('path', { d: 'M158.173,352.599c-3.049,0.568-4.381,1.999-3.999,4.281c0.38,2.283,2.093,3.046,5.138,2.283    c3.049-0.76,4.38-2.095,3.997-3.997C162.931,353.074,161.218,352.216,158.173,352.599z' }),
+                            _react2.default.createElement('path', { d: 'M141.898,354.885c-3.046,0-4.568,1.041-4.568,3.139c0,2.474,1.619,3.518,4.853,3.138c3.046,0,4.57-1.047,4.57-3.138    C146.753,355.553,145.134,354.502,141.898,354.885z' }),
+                            _react2.default.createElement('path', { d: 'M119.629,354.022c-0.76,2.095,0.478,3.519,3.711,4.284c2.855,1.137,4.664,0.568,5.424-1.714    c0.572-2.091-0.666-3.61-3.711-4.568C122.197,351.265,120.39,351.922,119.629,354.022z' }),
+                            _react2.default.createElement('path', { d: 'M414.41,24.123C398.326,8.042,378.964,0,356.309,0H82.225C59.577,0,40.208,8.042,24.123,24.123    C8.042,40.207,0,59.576,0,82.225v274.088c0,22.65,8.042,42.017,24.123,58.098c16.084,16.084,35.454,24.126,58.102,24.126h63.953    c4.184,0,7.327-0.144,9.42-0.424c2.092-0.288,4.184-1.526,6.279-3.717c2.096-2.187,3.14-5.376,3.14-9.562    c0-0.568-0.05-7.046-0.144-19.417c-0.097-12.375-0.144-22.176-0.144-29.41l-6.567,1.143c-4.187,0.76-9.469,1.095-15.846,0.999    c-6.374-0.096-12.99-0.76-19.841-1.998c-6.855-1.239-13.229-4.093-19.13-8.562c-5.898-4.477-10.085-10.328-12.56-17.559    l-2.856-6.571c-1.903-4.373-4.899-9.229-8.992-14.554c-4.093-5.332-8.232-8.949-12.419-10.852l-1.999-1.428    c-1.331-0.951-2.568-2.098-3.711-3.429c-1.141-1.335-1.997-2.669-2.568-3.997c-0.571-1.335-0.097-2.43,1.427-3.289    c1.524-0.855,4.281-1.279,8.28-1.279l5.708,0.855c3.808,0.76,8.516,3.042,14.134,6.851c5.614,3.806,10.229,8.754,13.846,14.843    c4.38,7.806,9.657,13.75,15.846,17.843c6.184,4.097,12.419,6.143,18.699,6.143s11.704-0.476,16.274-1.424    c4.565-0.954,8.848-2.385,12.847-4.288c1.713-12.751,6.377-22.559,13.988-29.41c-10.848-1.143-20.602-2.854-29.265-5.14    c-8.658-2.286-17.605-5.995-26.835-11.136c-9.234-5.14-16.894-11.512-22.985-19.13c-6.09-7.618-11.088-17.61-14.987-29.978    c-3.901-12.375-5.852-26.652-5.852-42.829c0-23.029,7.521-42.637,22.557-58.814c-7.044-17.32-6.379-36.732,1.997-58.242    c5.52-1.714,13.706-0.428,24.554,3.855c10.85,4.286,18.794,7.951,23.84,10.992c5.046,3.042,9.089,5.614,12.135,7.71    c17.705-4.949,35.976-7.423,54.818-7.423c18.841,0,37.115,2.474,54.821,7.423l10.849-6.852c7.426-4.57,16.18-8.757,26.269-12.562    c10.088-3.806,17.795-4.854,23.127-3.14c8.562,21.51,9.328,40.922,2.279,58.241c15.036,16.179,22.559,35.786,22.559,58.815    c0,16.18-1.951,30.505-5.852,42.969c-3.898,12.467-8.939,22.463-15.13,29.981c-6.184,7.519-13.894,13.843-23.124,18.986    c-9.232,5.137-18.178,8.853-26.84,11.132c-8.661,2.286-18.414,4.004-29.263,5.147c9.891,8.562,14.839,22.072,14.839,40.538v68.238    c0,3.237,0.472,5.852,1.424,7.851c0.958,1.998,2.478,3.374,4.571,4.141c2.102,0.76,3.949,1.235,5.571,1.424    c1.622,0.191,3.949,0.287,6.995,0.287h63.953c22.648,0,42.018-8.042,58.095-24.126c16.084-16.084,24.126-35.454,24.126-58.102    V82.225C438.533,59.576,430.491,40.204,414.41,24.123z' }),
+                            _react2.default.createElement('path', { d: 'M86.793,319.195c-1.331,0.948-1.141,2.471,0.572,4.565c1.906,1.902,3.427,2.189,4.57,0.855    c1.331-0.948,1.141-2.471-0.575-4.569C89.458,318.336,87.936,318.049,86.793,319.195z' }),
+                            _react2.default.createElement('path', { d: 'M77.374,312.057c-0.57,1.335,0.096,2.478,1.999,3.426c1.521,0.955,2.762,0.767,3.711-0.568    c0.57-1.335-0.096-2.478-1.999-3.433C79.182,310.91,77.945,311.102,77.374,312.057z' }),
+                            _react2.default.createElement('path', { d: 'M95.646,330.331c-1.715,0.948-1.715,2.666,0,5.137c1.713,2.478,3.328,3.142,4.853,1.998c1.714-1.334,1.714-3.142,0-5.427    C98.978,329.571,97.359,328.993,95.646,330.331z' }),
+                            _react2.default.createElement('path', { d: 'M105.641,343.174c-1.714,1.526-1.336,3.327,1.142,5.428c2.281,2.279,4.185,2.566,5.708,0.849    c1.524-1.519,1.143-3.326-1.142-5.42C109.068,341.751,107.164,341.463,105.641,343.174z' })
+                        )
+                    )
+                ),
+                this.props.children,
+                _react2.default.createElement(
+                    'a',
+                    { className: _socialIcons2.default.social__link, target: '_blank', href: 'https://www.linkedin.com/in/miedzyslowami/' },
+                    _react2.default.createElement(
+                        'svg',
+                        { id: _socialIcons2.default.linkedin, xmlns: 'http://www.w3.org/2000/svg', x: '0px', y: '0px', viewBox: '0 0 488.979 488.979', role: 'img', 'aria-labelledby': 'title desc' },
+                        _react2.default.createElement(
+                            'title',
+                            { id: 'title' },
+                            'Linkedin icon'
+                        ),
+                        _react2.default.createElement(
+                            'desc',
+                            { id: 'desc' },
+                            'Linkedin link'
+                        ),
+                        _react2.default.createElement(
+                            'g',
+                            null,
+                            _react2.default.createElement('path', { d: 'M414.41,24.123C398.333,8.042,378.963,0,356.315,0H82.228C59.58,0,40.21,8.042,24.126,24.123   C8.045,40.207,0.003,59.576,0.003,82.225v274.084c0,22.647,8.042,42.018,24.123,58.102c16.084,16.084,35.454,24.126,58.102,24.126   h274.084c22.648,0,42.018-8.042,58.095-24.126c16.084-16.084,24.126-35.454,24.126-58.102V82.225   C438.532,59.576,430.49,40.204,414.41,24.123z M133.618,367.157H67.666V169.016h65.952V367.157z M127.626,132.332   c-6.851,6.567-15.893,9.851-27.124,9.851h-0.288c-10.848,0-19.648-3.284-26.407-9.851c-6.76-6.567-10.138-14.703-10.138-24.41   c0-9.897,3.476-18.083,10.421-24.556c6.95-6.471,15.942-9.708,26.98-9.708c11.039,0,19.89,3.237,26.553,9.708   c6.661,6.473,10.088,14.659,10.277,24.556C137.899,117.625,134.477,125.761,127.626,132.332z M370.873,367.157h-65.952v-105.92   c0-29.879-11.036-44.823-33.116-44.823c-8.374,0-15.42,2.331-21.128,6.995c-5.715,4.661-9.996,10.324-12.847,16.991   c-1.335,3.422-1.999,8.75-1.999,15.981v110.775h-65.952c0.571-119.529,0.571-185.579,0-198.142h65.952v27.974   c13.867-21.681,33.558-32.544,59.101-32.544c22.84,0,41.21,7.52,55.104,22.554c13.895,15.037,20.841,37.214,20.841,66.519v113.64   H370.873z' })
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return SocialIcons;
+}(_react2.default.Component);
+
+exports.default = SocialIcons;
+
+/***/ }),
+/* 236 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(237);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(14)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!../../node_modules/postcss-loader/lib/index.js!../../node_modules/sass-loader/lib/loader.js?modules&localIdentName=[local]---[hash:base64:5]!./socialIcons.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!../../node_modules/postcss-loader/lib/index.js!../../node_modules/sass-loader/lib/loader.js?modules&localIdentName=[local]---[hash:base64:5]!./socialIcons.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(13)(undefined);
+// imports
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Raleway);", ""]);
+
+// module
+exports.push([module.i, "#social__links---1F_xp {\n  background-color: white;\n  height: 40px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around; }\n  #social__links---1F_xp .social__link---ClzY4 {\n    width: 35px;\n    padding: 2px;\n    box-sizing: border-box; }\n    #social__links---1F_xp .social__link---ClzY4 path {\n      fill: #273043; }\n", ""]);
+
+// exports
+exports.locals = {
+	"social__links": "social__links---1F_xp",
+	"social__link": "social__link---ClzY4"
+};
 
 /***/ })
 /******/ ]);

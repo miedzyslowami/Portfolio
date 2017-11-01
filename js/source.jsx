@@ -6,6 +6,7 @@ import Header from './components/header.jsx';
 import Logo from './components/logo.jsx';
 import About from './components/about.jsx';
 import Contact from './components/contact.jsx';
+import SocialIcons from './components/socialIcons.jsx';
 import Scroll from 'react-scroll';
 import {scroller} from 'react-scroll';
 

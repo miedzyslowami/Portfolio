@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-$pallete0:#FFFFFF,pink,grey,black,#459bb5;
+$pallete0:#FFFFFF,pink,#A7BAB8,#273043,#488799,#4e5d5b;
 $pallete1:#FFFFFF,#488799,#A7BAB8,#383324;
 $pallete2:#1D1E2C,#488799,#273043,#FFFFFF,#A7BAB8;
 $pallete3:#A7BAB8,#273043,#EFF6EE,#273043,white;
@@ -7,7 +7,7 @@ $currentPallete:$pallete0;
 //background/maincolor/accent/FontColor
 $backgroundColor:nth($currentPallete,1);
 $basicFont:'Raleway';
-$linkColor:nth($currentPallete,5);
+$linkColor:nth($currentPallete,6);
 $rulerColor:nth($currentPallete,3);
 //Logo
 $textDuration: 1s;
@@ -17,18 +17,20 @@ $logoTextToList:str-to-list($logoTextString);
 $logoText:m i e d z y s l o w a m i;
 $logoLength:length($logoText);
 $logoColor:nth($currentPallete,4);
-
 $logoFontSize:1rem;
 $logoFontWeight:900;
 $logoHeight:2.5 * $logoFontSize;
 $logoLetterBoxWidth:$logoFontSize;
 $logoWidth:$logoLetterBoxWidth * $logoLength;
-
+$navigationBorderColor:nth($currentPallete,2);
 //Header
 $headerBackground:nth($currentPallete,1);
 $headerFontSize:20px;
 $menuIconSize:100px;
 $menuIconFill:nth($currentPallete,2);
+$menuIconFillAccent:nth($currentPallete,6);
+$menuIconFillAccent2:nth($currentPallete,3);
+$menuIconFillAccent3:nth($currentPallete,4);
 $showMenuTimer:1s;
 $headerPaddingTopBottom:20px;
 $menuItemPadding:20px;
@@ -39,7 +41,7 @@ $menuHeight:(2 * $headerPaddingTopBottom) + $numberOfMenuItems * ($headerFontSiz
 
 $aboutBackgroundColor:nth($currentPallete,1);
 //Works HEXA GRID
-$skillButtonColor:nth($currentPallete,5);
+$skillButtonColor:nth($currentPallete,4);
 $worksFontSize:15px;
 $worksWidth:90%;
 $worksFontFamily:'Raleway', sans-serif;
@@ -48,12 +50,15 @@ $worksTextColor:nth($currentPallete,4);
 $workWidth:100%;
 $workClearButtonColor:nth($currentPallete,1);
 //Contact form
-$contactInputBackground:nth($currentPallete,5);
+$contactInputBackground:nth($currentPallete,3);
 $contactBorderColor:nth($currentPallete,2);
 $contactFontSize:1.5rem;
 $contactFontColor:nth($currentPallete,4);
 $contactIconColor:nth($currentPallete,4);
-$contactFocusInputBackground:nth($currentPallete,3);
+$contactFocusInputBackground:nth($currentPallete,2);
+//social Icons
+$socialIconFill:nth($currentPallete,4);
+
 //Footer
 $footerBackground:nth($currentPallete,1);
 $footerFontSize:20px;

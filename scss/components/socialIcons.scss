@@ -1,0 +1,16 @@
+@import '../variables.scss';
+
+#social__links{
+  background-color: white;
+  height:40px;
+  display: flex;
+  justify-content: space-around;
+  .social__link{
+    width: 35px;
+    padding:2px;
+    box-sizing: border-box;
+    path{
+      fill:$socialIconFill;
+    }
+  }
+}

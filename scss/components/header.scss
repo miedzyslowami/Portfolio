@@ -40,12 +40,15 @@
         text-transform: lowercase;
         letter-spacing: 3px;
         user-select: none;
+        list-style: none;
         cursor:pointer;
+        max-width:320px;
+        margin:0 auto;
         //The border and transition are set on a pseudo element to prevent transitioning the text and avoid adding markup.
         &:after {
           display:block;
           content: '';
-          border-bottom: solid 3px black;
+          border-bottom: 2px solid $navigationBorderColor;
           transform: scaleX(0);
           transition: transform 250ms ease-in-out;
           transform-origin:  0% 50%;

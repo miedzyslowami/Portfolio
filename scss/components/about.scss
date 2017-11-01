@@ -9,16 +9,17 @@
   font-size: 1.5rem;
   img{
     width: 100%;
+    max-width: 955px;
+    margin:0 auto;
   }
   .info{
     display: inline-block;
     margin:0 auto;
-    a{
-      text-decoration: none;
+    font-size: 1.3rem;
+    .contact___link,a{
       color:$linkColor;
-    }
-    .contact___link{
-      color:$linkColor;
+      display: inline-block;
+      text-decoration: underline;
     }
   }
 }

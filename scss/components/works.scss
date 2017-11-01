@@ -30,6 +30,8 @@
     }
     .skill__button{
       color: $skillButtonColor;
+      margin: 1px;
+      font-weight: 500;
       &__active{
         color: white;
         background-color: $skillButtonColor;
@@ -147,7 +149,6 @@
       color: #fff;
       overflow: hidden;
       transform: skewY(-30deg) rotate3d(0,0,1,60deg);
-
       &:focus,
       &:hover {
         h3,

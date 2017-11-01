@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {app} from '../config.js';
 import scss from '../../scss/components/contact.scss';
-
+import SocialIcons from './socialIcons.jsx';
 
 export class Contact extends React.Component {
     constructor(props){
@@ -97,6 +97,7 @@ export class Contact extends React.Component {
                     </div>
                     <input id={scss.submit__button} type='submit' value='send'/>
             </form>
+            <SocialIcons/>
             </section>
         )
     }
