@@ -7,7 +7,7 @@ export class Works extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            skills:['css','sass','gulp','webpack','jquery','javascript','api','ajax','firebase','rwd','facebook-auth','svg','react'],
+            skills:['css','sass','gulp','sass-modules','webpack','jquery','javascript','api','ajax','firebase','rwd','facebook-auth','svg','react'],
             works:workLinks,
             filteredWorks:workLinks,
             currentTags:[]
