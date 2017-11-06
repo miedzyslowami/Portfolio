@@ -37704,7 +37704,7 @@ var About = exports.About = function (_React$Component) {
                         ),
                         '. You can take a look at my works in a next section. For questions don\'t hesitate to use ',
                         _react2.default.createElement(
-                            'div',
+                            'span',
                             { className: _about2.default.contact___link, onClick: this.scrollToContact },
                             'contact form'
                         ),

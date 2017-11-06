@@ -40,7 +40,7 @@ export class About extends React.Component {
                 <div className={scss.info}>
                     <p>I'm Gosia and I am React's enthusiast, but not only.</p>
                     <p>I love traveling and learning new stuff. You can tell that by checking my <a target='_blank' href='https://www.linkedin.com/in/miedzyslowami/'>linkedin profile</a>. I manage my time well and I learn fast. I constantly develop my skills, what you can observe at my <a href='https://github.com/miedzyslowami' target='_blank'>github profile</a>.
-                    You can take a look at my works in a next section. For questions don't hesitate to use <div className={scss.contact___link} onClick={this.scrollToContact}>contact form</div>.
+                    You can take a look at my works in a next section. For questions don't hesitate to use <span className={scss.contact___link} onClick={this.scrollToContact}>contact form</span>.
                     </p>
                 </div>
             </section>
