@@ -15,9 +15,17 @@ module.exports =[
             imageUrl:'http://res.cloudinary.com/miedzyslowamicode/image/upload/v1504528544/logo_ldilkt.png'
         },
         {
+            title:"Veggies pds",
+            url:'https://miedzyslowami.github.io/veggies_psd/',
+            tags:['react','sass','sass-modules','rwd','webpack'],
+            alt:'nic',
+            description:'Blog page made from free PSD file with some modifications',
+            imageUrl:'https://raw.githubusercontent.com/miedzyslowami/veggies_psd/master/assets/hero01.png'
+        },
+        {
             title:"Blog psd",
             url:'https://miedzyslowami.github.io/Blog_psd/',
-            tags:['sass','gulp','webpack','javascript'],
+            tags:['sass','gulp','rwd','webpack','javascript'],
             alt:'nic',
             description:'Blog page made from free PSD file with some modifications',
             imageUrl:'http://res.cloudinary.com/miedzyslowamicode/image/upload/v1508185034/Meta_images/banner_2.jpg'
@@ -29,15 +37,17 @@ module.exports =[
             description:'This is a copy of original page made by me for training purposes.',
             imageUrl:'https://raw.githubusercontent.com/miedzyslowami/gosciniec/master/images/slider-img-1.jpg'
           },
+
+
         {
-            title:"Space API",
-            url:'https://miedzyslowami.github.io/space_photos/',
-            tags:['ajax','jquery','api','css'],
-            alt:'',
-            description:'Photos from NASA API',
-            imageUrl:'https://apod.nasa.gov/apod/image/1705/casa_main_960.jpg'
+            title:"Cat's shelter",
+            url:'https://miedzyslowami.github.io/cat_shelter/',
+            tags:['react','sass','webpack','gulp','html','rwd'],
+            alt:'nic',
+            description:'Simple search app with filter',
+            imageUrl:'http://res.cloudinary.com/miedzyslowamicode/image/upload/v1509297275/Meta_images/cat_shelter.png'
         },
-        {
+                {
             title:"Flexbox gallery",
             url:'https://miedzyslowami.github.io/gallery/',
             tags:['javascript','css'],
@@ -45,12 +55,13 @@ module.exports =[
             description:'Simple gallery with flexbox',
             imageUrl:'https://raw.githubusercontent.com/miedzyslowami/gallery/master/images/love.jpg'
         },
-        {
-            title:"Cat's shelter",
-            url:'https://miedzyslowami.github.io/cat_shelter/',
-            tags:['react','sass','webpack','gulp','html'],
-            alt:'nic',
-            description:'Simple search app with filter',
-            imageUrl:'http://res.cloudinary.com/miedzyslowamicode/image/upload/v1509297275/Meta_images/cat_shelter.png'
+                {
+            title:"Space API",
+            url:'https://miedzyslowami.github.io/space_photos/',
+            tags:['ajax','jquery','api','css'],
+            alt:'',
+            description:'Photos from NASA API',
+            imageUrl:'https://apod.nasa.gov/apod/image/1705/casa_main_960.jpg'
         }
+        
     ]
