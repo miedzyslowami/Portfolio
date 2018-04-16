@@ -62,6 +62,14 @@ module.exports =[
             alt:'',
             description:'Photos from NASA API',
             imageUrl:'https://apod.nasa.gov/apod/image/1705/casa_main_960.jpg'
+        },
+         {
+            title:"OpenWeather API",
+            url:'https://miedzyslowami.github.io/space_photos/',
+            tags:['ES6','ES7','React','sass-modules','webpack','geolocation'],
+            alt:'',
+            description:'OpenWeather API',
+            imageUrl:'http://res.cloudinary.com/miedzyslowamicode/image/upload/v1523907187/api_tou4gr.png'
         }
         
     ]
