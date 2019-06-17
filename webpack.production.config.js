@@ -4,35 +4,35 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-   entry: {
-     app: './js/app.js'
-   },
+  entry: {
+    app: 'app.js'
+  },
   devtool: 'source-map',
-   output: {
-     filename: '[name].bundle.js',
-     path: path.resolve(__dirname, 'public')
-   },
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'public')
+  },
 
-     plugins: [
-      new CleanWebpackPlugin(),
-      new HtmlWebpackPlugin({ template: 'index.html' })
-   ],
-   module: {
-     rules: [
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({ template: 'index.html' })
+  ],
+  module: {
+    rules: [
 
-       {
-         test: /\.jsx$/,
-         exclude: /node_modules/,
-         loader: 'babel-loader',
-         options:{
-           presets:['env','react','stage-2']
-         }
-       },
-       {
-       test: /\.html$/,
-       loader: 'html-loader'
-     }
+      {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['env', 'react', 'stage-2']
+        }
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
+      }
 
-     ]
-   }
- }
+    ]
+  }
+}

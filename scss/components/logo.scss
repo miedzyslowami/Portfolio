@@ -26,7 +26,7 @@
         animation-delay: 150 + ($i - 1) * 80ms;
         &:after{
           display:none;
-          content:nth($logoText,$i);
+          content:quote(nth($logoText,$i));
         }
       }
     }

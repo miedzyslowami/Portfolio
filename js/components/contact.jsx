@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {app} from '../config.js';
 import scss from '../../scss/components/contact.scss';
 import SocialIcons from './socialIcons.jsx';

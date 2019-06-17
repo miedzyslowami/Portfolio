@@ -1,18 +1,23 @@
 const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: ['./js/source.jsx'],
+  mode: 'development',
   output: {
-    path: path.resolve("js"),
+    path: path.resolve("./js"),
     filename: "app.js"
   },
   devServer: {
     inline: true,
     contentBase: './',
-    port: 3001
+    port: 8001
   },
   watch: true,
+  plugins: [
+    new HtmlWebpackPlugin({ template: '../index.html' })
+  ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx$/,
         exclude: /node_modules/,
@@ -22,20 +27,38 @@ module.exports = {
         }
       }, {
         test: /\.scss$/,
-        loader: [
-          "style-loader", "css-loader?modules&localIdentName=[local]---[hash:base64:5]", "postcss-loader", "sass-loader?modules&localIdentName=[local]---[hash:base64:5]"]
-        },
-        {
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: '[path][name]__[local]--[hash:base64:5]'
+              },
+              importLoaders: 2
+            }
+          },
+          'postcss-loader',
+          {
+            loader: "sass-loader",
+            options: {
+              modules: {
+                localIdentName: '[path][name]__[local]--[hash:base64:5]'
+              },
+            }
+          }]
+      },
+      {
         test: /\.html$/,
         loader: 'raw-loader'
       },
-{
-      test: /\.jpg$/,
-      loader: 'file-loader'
-}
+      {
+        test: /\.jpg$/,
+        loader: 'file-loader'
+      }
     ]
   },
   plugins: [
-   require('autoprefixer')
- ]
+    require('autoprefixer')
+  ]
 }

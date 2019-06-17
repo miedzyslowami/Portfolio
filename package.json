@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "webpack-dev-server --config=webpack.config.js --hot",
     "deploy": "gh-pages -d public",
+    "prebuild": "./node_modules/.bin/webpack --config=webpack.config.js",
     "build": "./node_modules/.bin/webpack --config=webpack.production.config.js"
   },
   "repository": {
@@ -19,7 +21,8 @@
   },
   "homepage": "https://github.com/miedzyslowami/Portfolio#readme",
   "dependencies": {
-    "babel-loader": "^8.0.6",
+    "autoprefixer": "^9.6.0",
+    "babel-loader": "^7.1.5",
     "clean-webpack-plugin": "^3.0.0",
     "firebase": "^6.2.0",
     "gh-pages": "^2.0.1",

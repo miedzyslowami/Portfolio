@@ -3,14 +3,12 @@ import ReactDOM from 'react-dom';
 import Works from './components/works.jsx';
 import Footer from './components/footer.jsx';
 import Header from './components/header.jsx';
-import Logo from './components/logo.jsx';
 import About from './components/about.jsx';
 import Contact from './components/contact.jsx';
 
-import Scroll from 'react-scroll';
-import {scroller} from 'react-scroll';
-
 import scss from '../scss/main.scss';
+
+import Scroll from 'react-scroll';
 
 class App extends React.Component {
 

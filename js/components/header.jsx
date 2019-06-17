@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import MobileMenu from './mobileMenu.jsx';
 import Logo from './logo.jsx';
 import scss from '../../scss/components/header.scss';
