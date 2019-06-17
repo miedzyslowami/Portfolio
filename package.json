@@ -5,9 +5,10 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart:dev":"./node_modules/.bin/webpack --config=webpack.config.js",
     "start:dev": "webpack-dev-server --config=webpack.config.js --hot",
+    "predeploy": "./node_modules/.bin/webpack --config=webpack.production.config.js",
     "deploy": "gh-pages -d public",
-    "prebuild": "./node_modules/.bin/webpack --config=webpack.config.js",
     "build": "./node_modules/.bin/webpack --config=webpack.production.config.js"
   },
   "repository": {

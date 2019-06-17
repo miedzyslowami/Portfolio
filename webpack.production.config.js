@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'production',
   entry: {
-    app: 'app.js'
+    app: './development/app.js'
   },
   devtool: 'source-map',
   output: {
@@ -15,7 +15,7 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({ template: 'index.html' })
+    new HtmlWebpackPlugin({ template: './src/index.html' })
   ],
   module: {
     rules: [

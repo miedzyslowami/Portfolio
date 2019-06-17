@@ -1,10 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-  entry: ['./js/source.jsx'],
   mode: 'development',
+  entry: ['./src/js/source.jsx'],
   output: {
-    path: path.resolve("./js"),
+    path: path.resolve(__dirname, 'development'),
     filename: "app.js"
   },
   devServer: {
@@ -13,9 +13,6 @@ module.exports = {
     port: 8001
   },
   watch: true,
-  plugins: [
-    new HtmlWebpackPlugin({ template: '../index.html' })
-  ],
   module: {
     rules: [
       {
@@ -50,7 +47,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: 'raw-loader'
+        loader: 'html-loader'
       },
       {
         test: /\.jpg$/,
@@ -59,6 +56,7 @@ module.exports = {
     ]
   },
   plugins: [
-    require('autoprefixer')
-  ]
+    require('autoprefixer'),
+    new HtmlWebpackPlugin({ template: './src/index.html' })
+  ],
 }
