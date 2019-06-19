@@ -7,7 +7,7 @@ export class Works extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            skills:['css','sass','gulp','sass-modules','webpack','jquery','javascript','api','ajax','firebase','rwd','facebook-auth','svg','react'],
+            skills:['css','sass','gulp','sass-modules','webpack','jquery','javascript','api','ajax','firebase','rwd','facebook-auth','svg','react', 'create-react-app', 'charts'],
             works:workLinks,
             filteredWorks:workLinks,
             currentTags:[]
@@ -31,7 +31,6 @@ export class Works extends React.Component {
                 <li key={i} data-tags={work.tags} className={scss.work}>
                   <div className={scss.work__in}>
                     <a target='_blank' className={scss.work__link} href={work.url}>
-                      <img src={work.imageUrl} alt={work.alt} />
                       <h3>{work.title}</h3>
                       <p>{work.description}</p>
                     </a>

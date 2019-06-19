@@ -5,7 +5,7 @@
   text-align: center;
   padding: 11px;
   box-sizing: border-box;
-  line-height: 2.5rem;
+  line-height: 2.5;
   font-size: 1.5rem;
   img{
     width: 100%;
@@ -17,9 +17,37 @@
     margin:0 auto;
     font-size: 1.3rem;
     .contact___link,a{
-      color:$linkColor;
+      color: black;
       display: inline-block;
-      text-decoration: underline;
+      text-decoration: none;
+    }
+    .highlight_container {
+      position: relative;
+      &:before {
+        background: rgba(242, 106, 154, 0.43);
+        left: 5px;
+        top: 3px;
+        transform: rotate(5deg);    
+      }
+      &:after {
+        background: rgba(242, 106, 154, 0.24);
+        right: -2px;
+        top: 3px;
+      }
+      &:after, &:before {
+        content: " ";
+        display: block;
+        height: 90%;
+        margin-left: -3px;
+        margin-right: -3px;
+        position: absolute;
+        width: 100%;
+      }
+      .highlight {
+        display: inline-block;
+        position: relative;
+        z-index: 4;
+      }
     }
   }
 }
