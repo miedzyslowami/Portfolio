@@ -6,6 +6,8 @@ import Header from './components/header.jsx';
 import About from './components/about.jsx';
 import Contact from './components/contact.jsx';
 
+import registerServiceWorker from '../registerServiceWorker.js';
+
 import scss from '../scss/main.scss';
 
 import Scroll from 'react-scroll';
@@ -24,7 +26,9 @@ componentDidMount() {
   Events.scrollEvent.register('end', (to, element)=> {
     console.log("end", arguments);
   });
-  scrollSpy.update();}
+
+  scrollSpy.update();
+}
 
 componentWillUnmount() {
   Events.scrollEvent.remove('begin');
@@ -54,3 +58,5 @@ document.addEventListener('DOMContentLoaded', function(){
         document.getElementById('app')
     );
 });
+
+registerServiceWorker();
