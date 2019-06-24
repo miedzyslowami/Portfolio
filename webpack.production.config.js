@@ -1,6 +1,7 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = {
   mode: 'production',
@@ -12,11 +13,6 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'public')
   },
-
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({ template: './src/index.html' })
-  ],
   module: {
     rules: [
 
@@ -34,5 +30,25 @@ module.exports = {
       }
 
     ]
-  }
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new WebpackPwaManifest ({
+      name: 'Miedzyslowami portfolio',
+      short_name: 'Portfolio',
+      description: 'Frontend developer portfolio',
+      background_color: '#ffffff',
+      start_url: "./index.html",
+      display: "standalone",
+      theme_color: "#ffffff",
+      crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+      icons: [
+        {
+          src: path.resolve('assets/icons/flower.png'),
+          sizes: [64, 128, 192, 256, 384, 512] // multiple sizes
+        }
+      ]
+    })
+  ]
 }
