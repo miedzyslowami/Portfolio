@@ -48,7 +48,7 @@ export class About extends React.Component {
                                 </span>
                         </a>.
                         I manage my time well and I learn fast. I constantly develop my skills, what you can observe at my
-                        <a className={scss.highlight_container} href='https://github.com/miedzyslowami' target='_blank'>
+                        <a className={scss.highlight_container} href='https://github.com/miedzyslowami' target='_blank' rel="noreferrer">
                             &nbsp;
                             <span className={scss.highlight}>
                                 github profile

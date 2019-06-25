@@ -14,7 +14,7 @@ export class SocialIcons extends React.Component {
     }
     render() {
         return (<div id={scss.social__links}>
-                    <a href='https://github.com/miedzyslowami' target='_blank' className={scss.social__link} >
+                    <a href='https://github.com/miedzyslowami' target='_blank' rel="noreferrer" className={scss.social__link} >
                         <svg id={scss.github} xmlns='http://www.w3.org/2000/svg' x="0px" y="0px" viewBox="0 0 488.979 488.979" role="img" aria-labelledby="title desc">
                           <title id="title">Github icon</title>
                           <desc id="desc">Github link</desc>
@@ -31,7 +31,7 @@ export class SocialIcons extends React.Component {
                           </svg>
                   </a>
                   {this.props.children}
-                  <a className={scss.social__link} target='_blank' href='https://www.linkedin.com/in/miedzyslowami/'>
+                  <a className={scss.social__link} target='_blank' rel="noreferrer" href='https://www.linkedin.com/in/miedzyslowami/'>
                       <svg id={scss.linkedin} xmlns='http://www.w3.org/2000/svg' x="0px" y="0px" viewBox="0 0 488.979 488.979" role="img" aria-labelledby="title desc">
                         <title id="title">Linkedin icon</title>
                         <desc id="desc">Linkedin link</desc>
