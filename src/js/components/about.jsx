@@ -41,7 +41,7 @@ export class About extends React.Component {
                 <div className={scss.info}>
                     <p>I'm Gosia and I am React's enthusiast, but not only.</p>
                     <p>I love traveling and learning new stuff. You can tell that by checking my
-                        <a className={scss.highlight_container} target='_blank' href='https://www.linkedin.com/in/miedzyslowami/'>
+                        <a className={scss.highlight_container} target='_blank' href='https://www.linkedin.com/in/miedzyslowami/' rel="noreferrer">
                             &nbsp;
                                 <span className={scss.highlight}>
                                 linkedin profile
