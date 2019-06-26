@@ -7,32 +7,59 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 module.exports = {
   mode: 'production',
   entry: {
-    app: './development/app.js'
+    entry: ['./src/js/source.jsx'],
   },
   devtool: 'source-map',
   output: {
     filename: '[name].bundle.js',
+		chunkFilename: "[id].bundle.js",
     path: path.resolve(__dirname, 'public')
   },
   module: {
     rules: [
-
       {
         test: /\.jsx$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: {
-          presets: ['env', 'react', 'stage-2']
+        query: {
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+          plugins: ['@babel/plugin-syntax-dynamic-import', '@babel/plugin-proposal-class-properties']
         }
+      }, {
+        test: /\.scss$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: '[path][name]__[local]--[hash:base64:5]'
+              },
+              importLoaders: 2
+            }
+          },
+          'postcss-loader',
+          {
+            loader: "sass-loader",
+            options: {
+              modules: {
+                localIdentName: '[path][name]__[local]--[hash:base64:5]'
+              },
+            }
+          }]
       },
       {
         test: /\.html$/,
         loader: 'html-loader'
+      },
+      {
+        test: /\.jpg$/,
+        loader: 'file-loader'
       }
-
     ]
   },
   plugins: [
+    require('autoprefixer'),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({ template: './src/index.html' }),
     new WebpackPwaManifest ({

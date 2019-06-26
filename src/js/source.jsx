@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import Works from './components/works.jsx';
+// import Works from './components/works.jsx';
 import Footer from './components/footer.jsx';
 import Header from './components/header.jsx';
 import About from './components/about.jsx';
-import Contact from './components/contact.jsx';
+// import Contact from './components/contact.jsx';
 
 import registerServiceWorker from '../registerServiceWorker.js';
 
 import scss from '../scss/main.scss';
 
 import Scroll from 'react-scroll';
+
+let myTime = window.performance.now();
+
+const LazyContact = React.lazy(() => import('./components/contact.jsx'));
+const LazyWorks = React.lazy(() => import('./components/works.jsx'));
 
 class App extends React.Component {
 
@@ -41,9 +46,13 @@ componentWillUnmount() {
             <hr/>
             <About/>
             <hr/>
-            <Works/>
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazyWorks/>
+            </Suspense>
             <hr/>
-            <Contact/>
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazyContact/>
+            </Suspense>
             <hr/>
             <Footer/>
           </div>
@@ -60,3 +69,4 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 registerServiceWorker();
+window.performance.mark('mark_fully_loaded');

@@ -8,7 +8,8 @@ module.exports = {
   entry: ['./src/js/source.jsx'],
   output: {
     path: path.resolve(__dirname, 'development'),
-    filename: "app.js"
+    filename: "app.js",
+		chunkFilename: "[id].app.js"
   },
   devServer: {
     inline: true,
@@ -23,7 +24,8 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['env', 'stage-2', 'react']
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+          plugins: ['@babel/plugin-syntax-dynamic-import', '@babel/plugin-proposal-class-properties']
         }
       }, {
         test: /\.scss$/,

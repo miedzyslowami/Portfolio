@@ -5,11 +5,11 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart:dev": "./node_modules/.bin/webpack --config=webpack.config.js",
+    "prestart:dev": "./node_modules/.bin/webpack --config=webpack.config.js --mode development",
     "start:dev": "webpack-dev-server --config=webpack.config.js --hot",
     "predeploy": "./node_modules/.bin/webpack --config=webpack.production.config.js",
     "deploy": "gh-pages -d public",
-    "build": "./node_modules/.bin/webpack --config=webpack.production.config.js"
+    "build": "./node_modules/.bin/webpack --config=webpack.production.config.js --mode production"
   },
   "repository": {
     "type": "git",
@@ -22,10 +22,13 @@
   },
   "homepage": "https://github.com/miedzyslowami/Portfolio#readme",
   "dependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.6.0",
-    "babel-loader": "^7.1.5",
     "clean-webpack-plugin": "^3.0.0",
-    "firebase": "^6.2.2",
+    "firebase": "^5.11.1",
     "gh-pages": "^2.0.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
@@ -37,10 +40,11 @@
     "webpack-pwa-manifest": "^4.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/polyfill": "^7.4.4",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^7.1.5",
     "css-loader": "^3.0.0",
     "file-loader": "^4.0.0",
     "node-sass": "^4.12.0",

@@ -57,7 +57,8 @@
     width: 90%;
     margin: 0 auto;
     overflow: hidden;
-    font-family: $worksFontFamily;
+    font-family: $worksFontFamily, sans-serif;
+    font-display: optional;
     font-size: $worksFontSize;
     list-style-type: none;
 
