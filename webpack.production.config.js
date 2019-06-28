@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 
 module.exports = {
   mode: 'production',
@@ -22,7 +23,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['@babel/preset-env', '@babel/preset-react'],
+          presets: ['minify', '@babel/preset-env', '@babel/preset-react'],
           plugins: ['@babel/plugin-syntax-dynamic-import', '@babel/plugin-proposal-class-properties']
         }
       }, {
@@ -95,6 +96,6 @@ module.exports = {
       minify: true, // minify and uglify the script
       navigateFallback: '/index.html',
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
-    })   
+    })
   ]
 }

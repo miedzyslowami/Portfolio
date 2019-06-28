@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Scroll from 'react-scroll';
 import { scroller } from 'react-scroll';
-
 import scss from '../../scss/components/about.scss';
 
 export class About extends React.Component {
@@ -37,7 +36,12 @@ export class About extends React.Component {
         return (
             <section name='About' id={scss.about}>
                 <h2>Know me</h2>
-                <img src='https://res.cloudinary.com/miedzyslowamicode/image/upload/v1509381717/Assets/portfolio_about_me.png' alt='picture of me' />
+                <picture>
+                    <source srcset="https://res.cloudinary.com/miedzyslowamicode/image/upload/v1561717406/Assets/portfolio_about_me_500.webp 1x, https://res.cloudinary.com/miedzyslowamicode/image/upload/v1561717406/Assets/portfolio_about_me_500_2x.webp 2x" sizes='(max-width: 500px)' type="image/webp" alt='picture of me'/>
+                    <source srcset="https://res.cloudinary.com/miedzyslowamicode/image/upload/v1561717406/Assets/portfolio_about_me.webp 1x,https://res.cloudinary.com/miedzyslowamicode/image/upload/v1561717406/Assets/portfolio_about_me_2x.webp 2x" type="image/webp" alt='picture of me'/>
+                    <source srcset="https://res.cloudinary.com/miedzyslowamicode/image/upload/v1509381717/Assets/portfolio_about_me.png" type="image/jpeg" alt='picture of me'/> 
+                    <img src='https://res.cloudinary.com/miedzyslowamicode/image/upload/v1561717406/Assets/portfolio_about_me.webp' alt='picture of me' />
+                </picture>
                 <div className={scss.info}>
                     <p>I'm Gosia and I am React's enthusiast, but not only.</p>
                     <p>I love traveling and learning new stuff. You can tell that by checking my
