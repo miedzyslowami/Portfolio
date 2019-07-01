@@ -20,6 +20,8 @@ Site is created for mobile view and I hardly use breakpoints (only for heksagon 
 
 After more than a year I decided to update my portfolio project and optimize performance. I updated dependencies and made enhancemnts in accordance with Chrome devtools audit suggestions. I also made application available offline (PWA). All indicators are green. I think it is quite challenging to develop code that you haven't seen for a year. But it gives some hints how to write it in a KISS way, so that it easy to maintain it.
 
+### **Do not hesitate to audit my changes on devtools**
+
 Installation:
 
 1.Write in a terminal git clone https://github.com/miedzyslowami/Portfolio.git to clone repository 
