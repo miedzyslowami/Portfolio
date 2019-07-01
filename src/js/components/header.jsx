@@ -1,9 +1,11 @@
-import React from 'react';
-import MobileMenu from './mobileMenu.jsx';
+import React, { Suspense } from 'react';
+// import MobileMenu from './mobileMenu.jsx';
 import Logo from './logo.jsx';
 import scss from '../../scss/components/header.scss';
 import Scroll from 'react-scroll';
 import {scroller} from 'react-scroll';
+
+const LazyMenu = React.lazy(() => import('./mobileMenu.jsx'));
 
 export class Header extends React.Component {
     constructor(props){
@@ -70,7 +72,10 @@ export class Header extends React.Component {
               <div className={scss.wrapper}>
                 <Logo/>
                 <nav id={scss.mobile__menu}>
-                <MobileMenu handleClick={this.dropDownMenu}/>
+                {/* <MobileMenu /> */}
+                <Suspense fallback={<div className={scss.loading} >Loading...</div>}>
+                    <LazyMenu handleClick={this.dropDownMenu}/>
+                </Suspense>
                 <ul id={scss.navigation} className={this.state.className}>
                 {menuItems}
                 </ul></nav>

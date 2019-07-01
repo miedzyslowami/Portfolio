@@ -6,6 +6,11 @@
   width:100vw;
   padding:$headerPaddingTopBottom 10px;
   box-sizing: border-box;
+  .loading{
+    display: block;
+    margin: 0 auto;
+    height: 100px;
+  }
   .main__heading{
     text-indent: -100%;
     visibility: hidden;
