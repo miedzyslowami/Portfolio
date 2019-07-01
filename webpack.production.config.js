@@ -59,6 +59,14 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+      maxInitialRequests: Infinity,
+      minSize: 0
+    }
+  },
   plugins: [
     require('autoprefixer'),
     new CleanWebpackPlugin(),
