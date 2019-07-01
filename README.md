@@ -16,10 +16,16 @@ Site is created for mobile view and I hardly use breakpoints (only for heksagon 
 
 ### **4.Contact form is conected to Firebase and has simple validation.**
 
+### **5.2019- update and optimization LAZY LOAD, SERVICEWORKER, PWA, WEBP**
+
+After more than a year I decided to update my portfolio project and optimize performance. I updated dependencies and made enhancemnts in accordance with Chrome devtools audit suggestions. I also made application available offline (PWA). All indicators are green. I think it is quite challenging to develop code that you haven't seen for a year. But it gives some hints how to write it in a KISS way, so that it easy to maintain it.
+
 Installation:
 
-1.Write in a terminal git clone https://github.com/miedzyslowami/Portfolio.git to clone repository 2.Write in a terminal npm install to install all deps
+1.Write in a terminal git clone https://github.com/miedzyslowami/Portfolio.git to clone repository 
+2.Write in a terminal npm install to install all deps
 
 Usage:
 
-1.Write in a terminal gulp default- to run and watch changes in all scss files 2.Write in a terminal webpack - to run compiler from jsx to js and to watch changes
+1.Write in a terminal npm start:dev - to run compiler from jsx to js and to watch changes
+2.Write in a terminal npm predeploy - to build an app in public directory 
