@@ -1,4 +1,4 @@
-# Project name: Portfolio :baby: ONGOING!
+# Project name: Portfolio :princess: 2019 UPDATE!
 
 TECHNOLOGIES: PWA, HTML5, CSS, SASS, SASS-MODULES,REACT, FIREBASE, REUSABLE-COMPONENTS, WEBPACK
 
