@@ -16,11 +16,11 @@ Site is created for mobile view and I hardly use breakpoints (only for heksagon 
 
 ### **4.Contact form is conected to Firebase and has simple validation.**
 
-### **5.2019- update and optimization LAZY LOAD, SERVICEWORKER, PWA, WEBP**
+### **5.2019- update and optimization LAZY LOAD, SERVICEWORKER, PWA, WEBP**:tada:
 
-After more than a year I decided to update my portfolio project and optimize performance. I updated dependencies and made enhancemnts in accordance with Chrome devtools audit suggestions. I also made application available offline (PWA). All indicators are green. I think it is quite challenging to develop code that you haven't seen for a year. But it gives some hints how to write it in a KISS way, so that it easy to maintain it.
+After more than a year I decided to update my portfolio project and optimize performance. I updated dependencies and made enhancemnts in accordance with Chrome devtools audit suggestions. I also made application available offline (PWA):boom:. All indicators are green:exclamation: I think it is quite challenging to develop code that you haven't seen for a year. But it gives some hints how to write it in a KISS way, so that it easy to maintain it.
 
-### **Do not hesitate to audit my changes on devtools**
+### **Do not hesitate to audit my changes on devtools**:trollface:
 
 Installation:
 
