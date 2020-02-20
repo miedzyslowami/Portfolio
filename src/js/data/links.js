@@ -1,23 +1,32 @@
 module.exports = [
     {
+        title: "Preschool",
+        url: 'https://silly-neumann-2f2df5.netlify.com/',
+        tags: ['Gatsby', 'Netlify', 'GraphQl', 'netlify-cms', 'CircleCi', 'Cloudinary', 'WCAG 2.1'],
+        description: 'Preschool page with cms',
+    },
+    {
+        title: "Jet-cake project",
+        url: 'https://miedzyslowami.github.io/jetcake-project/',
+        tags: ['React', 'FirebaseAuth', 'FirebaseStorage', 'FirebaseDatabase', 'hooks', 'CRA', 'router', 'private-route'],
+        description: 'Implementig Firebase authorisation, storage and database with React app with hooks',
+    },
+    {
         title: "Data charts",
         url: 'https://miedzyslowami.github.io/data-charts/',
         tags: ['ES6', 'ES7', 'React', 'create-react-app', 'webpack', 'API'],
-        alt: '',
         description: 'Async load data from OECD and display in charts',
     },
     {
         title: "OpenWeather API",
         url: 'https://miedzyslowami.github.io/space_photos/',
         tags: ['ES6', 'ES7', 'React', 'sass-modules', 'webpack', 'geolocation'],
-        alt: '',
         description: 'OpenWeather API',
     },
     {
         title: "Nurseries",
         url: 'https://miedzyslowami.github.io/nurseries/#/',
         tags: ['firebase', 'react', 'rwd', 'sass', 'gulp', 'webpack', 'svg', 'api'],
-        alt: 'nic',
         description: 'Page allows to apply for a nurseries',
     },
     {
@@ -30,14 +39,12 @@ module.exports = [
         title: "Veggies pds",
         url: 'https://miedzyslowami.github.io/veggies_psd/',
         tags: ['react', 'sass', 'sass-modules', 'rwd', 'webpack'],
-        alt: 'nic',
         description: 'Blog page made from free PSD file with some modifications',
     },
     {
         title: "Blog psd",
         url: 'https://miedzyslowami.github.io/Blog_psd/',
         tags: ['sass', 'gulp', 'rwd', 'webpack', 'javascript'],
-        alt: 'nic',
         description: 'Blog page made from free PSD file with some modifications',
     },
     {
@@ -46,27 +53,22 @@ module.exports = [
         tags: ['gulp', 'sass', 'rwd', 'javascript'],
         description: 'This is a copy of original page made by me for training purposes.',
     },
-
-
     {
         title: "Cat's shelter",
         url: 'https://miedzyslowami.github.io/cat_shelter/',
         tags: ['react', 'sass', 'webpack', 'gulp', 'html', 'rwd'],
-        alt: 'nic',
         description: 'Simple search app with filter',
     },
     {
         title: "Flexbox gallery",
         url: 'https://miedzyslowami.github.io/gallery/',
         tags: ['javascript', 'css'],
-        alt: 'nic',
         description: 'Simple gallery with flexbox',
     },
     {
         title: "Space API",
         url: 'https://miedzyslowami.github.io/space_photos/',
         tags: ['ajax', 'jquery', 'api', 'css'],
-        alt: '',
         description: 'Photos from NASA API',
     }
 
