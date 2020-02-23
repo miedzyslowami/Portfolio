@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const MinifyPlugin = require("babel-minify-webpack-plugin");
-
+const Dotenv = require('dotenv-webpack');
+ 
 module.exports = {
   mode: 'production',
   entry: {
@@ -69,6 +70,7 @@ module.exports = {
   },
   plugins: [
     require('autoprefixer'),
+    new Dotenv(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({ template: './src/index.html' }),
     new WebpackPwaManifest ({

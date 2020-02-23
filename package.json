@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart:dev": "./node_modules/.bin/webpack --config=webpack.config.js --mode development && node -p 'process.env'",
-    "start:dev": "webpack-dev-server --config=webpack.config.js --hot",
+    "start:dev": "node -p 'process.env' && webpack-dev-server --config=webpack.config.js --hot",
     "predeploy": "./node_modules/.bin/webpack --config=webpack.production.config.js --mode production && node -p 'process.env'",
     "deploy": "gh-pages -d public",
     "build": "./node_modules/.bin/webpack --config=webpack.production.config.js --mode production && node -p 'process.env'"
@@ -32,6 +31,7 @@
     "babel-loader": "^7.1.5",
     "babel-minify-webpack-plugin": "^0.3.1",
     "clean-webpack-plugin": "^3.0.0",
+    "dotenv-webpack": "^1.7.0",
     "firebase": "^6.2.4",
     "gh-pages": "^2.0.1",
     "html-loader": "^0.5.5",

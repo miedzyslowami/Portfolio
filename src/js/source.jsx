@@ -16,7 +16,7 @@ let myTime = window.performance.now();
 
 const LazyContact = React.lazy(() => import('./components/contact.jsx'));
 const LazyWorks = React.lazy(() => import('./components/works.jsx'));
-
+console.log(process.env.REACT_APP_APIKEY)
 class App extends React.Component {
 
 componentDidMount() {
