@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import scss from '../../scss/components/works.scss';
 import workLinks from '../data/links.js';
 
@@ -7,7 +6,7 @@ export class Works extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            skills:['css','sass','gulp','sass-modules','webpack','jquery','javascript','api','ajax','firebase','rwd','facebook-auth','svg','react', 'create-react-app', 'charts'],
+            skills:['css','sass','gulp','sass-modules','webpack','jquery','javascript','api','ajax','firebase','rwd','facebook-auth','svg','react', 'create-react-app', 'charts', 'Gatsby', 'Netlify', 'GraphQl', 'netlify-cms', 'CircleCi', 'Cloudinary', 'WCAG 2.1', 'typescript', 'nativescript'],
             works:workLinks,
             filteredWorks:workLinks,
             currentTags:[]

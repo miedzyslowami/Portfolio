@@ -1,5 +1,16 @@
 module.exports = [
     {
+        title: "App for pollution source survey",
+        tags: ['typescript', 'nativescript'],
+        description: 'Mobile app for pollution source survey (contribution)',
+    },
+    {
+        title: "Muselfie",
+        url: 'https://github.com/CCLab/muselfie',
+        tags: ['typescript', 'nativescript'],
+        description: 'Mobile app for mixing photos with paintings (contribution)',
+    },
+    {
         title: "Preschool",
         url: 'https://silly-neumann-2f2df5.netlify.com/',
         tags: ['Gatsby', 'Netlify', 'GraphQl', 'netlify-cms', 'CircleCi', 'Cloudinary', 'WCAG 2.1'],
@@ -9,12 +20,12 @@ module.exports = [
         title: "Jet-cake project",
         url: 'https://miedzyslowami.github.io/jetcake-project/',
         tags: ['React', 'FirebaseAuth', 'FirebaseStorage', 'FirebaseDatabase', 'hooks', 'CRA', 'router', 'private-route'],
-        description: 'Implementig Firebase authorisation, storage and database with React app with hooks',
+        description: 'Firebase auth, storage and database with CRA with hooks',
     },
     {
         title: "Data charts",
         url: 'https://miedzyslowami.github.io/data-charts/',
-        tags: ['ES6', 'ES7', 'React', 'create-react-app', 'webpack', 'API'],
+        tags: ['ES6', 'ES7', 'React', 'create-react-app', 'webpack', 'API', 'charts'],
         description: 'Async load data from OECD and display in charts',
     },
     {
